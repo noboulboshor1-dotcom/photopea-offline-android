@@ -128,7 +128,7 @@ def find_and_replace(file,find,replace):
         pp.write(file1)
 
 #Allow any port to be used
-find_and_replace('code/pp/pp.js','8887','')
+find_and_replace('code/pp/pp.js','"\'$!|"))','"\'$!|"))||true')
 
 #Don't load Google Analytics
 find_and_replace('index.html','//www.google-analytics.com/analytics.js','')

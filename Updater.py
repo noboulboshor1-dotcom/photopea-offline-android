@@ -132,6 +132,7 @@ find_and_replace('code/pp/pp.js','"\'$!|"))','"\'$!|"))||true')
 
 #Don't load Google Analytics
 find_and_replace('index.html','//www.google-analytics.com/analytics.js','')
+find_and_replace('index.html', '//www.googletagmanager.com', '#')
 
 #Allow the import of pictures of URLs (bypassing mirror.php)
 find_and_replace('code/pp/pp.js','"mirror.php?url="+encodeURIComponent','')

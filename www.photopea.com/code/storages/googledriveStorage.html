@@ -10,28 +10,47 @@
 	<script type="text/javascript">
 
 		var sentFalse = false;
-		var clientId = '463342976776-04ub3ijsr7i5qobn8ha32ap6vsaae75a.apps.googleusercontent.com';
-		var scope = 'https://www.googleapis.com/auth/drive';
-		var discoveryDocs = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
+		var clientId = "463342976776-04ub3ijsr7i5qobn8ha32ap6vsaae75a.apps.googleusercontent.com";
+		var scope = "https://www.googleapis.com/auth/drive";
+		var discoveryDocs = "https://www.googleapis.com/discovery/v1/apis/drive/v3/rest";
+		var mode3dir = "Photopea";
 
 		var client;
 
-		var isShared = false;
+		//var isShared = false;
 		var sharedDrives = null;
+
+		var mode = 0; //0 = normal, 1 = shared drives, 2 = application folder, 3 = PP folder
 		
 		function go()
 		{
 			var queryString = window.location.search;
 			var urlParams = new URLSearchParams(queryString);
-			if(urlParams.get('sharedDrive') == 'true') isShared = true;
+			if(urlParams.get('mode')) mode = urlParams.get('mode');
+			if(mode == 2) { scope = "https://www.googleapis.com/auth/drive.appdata"; }
+			else if(mode == 3) { scope = "https://www.googleapis.com/auth/drive.file"; }
+			else { scope = "https://www.googleapis.com/auth/drive"; }
 			window.addEventListener("message", onMessage, false);		   				
 			gapi.load('client', gapiInit);
 		}
 
 		function saveToken(e)
 		{
-			localStorage.setItem("googledriveAccessToken", e.access_token);
-			localStorage.setItem("googledriveAccessTokenValidUntil", Date.now() + e.expires_in * 1000);
+			if(mode == 2)
+			{
+				localStorage.setItem("googledriveAppFolderAccessToken", e.access_token);
+				localStorage.setItem("googledriveAppFolderAccessTokenValidUntil", Date.now() + e.expires_in * 1000);
+			}
+			else if(mode == 3)
+			{
+				localStorage.setItem("googledriveFileAccessToken", e.access_token);
+				localStorage.setItem("googledriveFileAccessTokenValidUntil", Date.now() + e.expires_in * 1000);	
+			}
+			else
+			{
+				localStorage.setItem("googledriveAccessToken", e.access_token);
+				localStorage.setItem("googledriveAccessTokenValidUntil", Date.now() + e.expires_in * 1000);
+			}
 			send("ready", true);			        	
 		}
 
@@ -45,6 +64,24 @@
 						scope: scope,
 						callback: saveToken,
 					});
+					if(mode == 2)
+					{
+						if(Date.now() < localStorage.getItem("googledriveAppFolderAccessTokenValidUntil"))
+						{
+							gapi.client.setToken({ "access_token" : localStorage.getItem("googledriveAppFolderAccessToken") });
+							send("ready", true);
+							return;
+						}
+					}
+					else if(mode == 3)
+					{
+						if(Date.now() < localStorage.getItem("googledriveFileAccessTokenValidUntil"))
+						{
+							gapi.client.setToken({ "access_token" : localStorage.getItem("googledriveFileAccessToken") });
+							send("ready", true);
+							return;
+						}
+					}
 					if(Date.now() < localStorage.getItem("googledriveAccessTokenValidUntil"))
 					{
 						gapi.client.setToken({ "access_token" : localStorage.getItem("googledriveAccessToken") });
@@ -97,7 +134,20 @@
 		{
 			if(!id) 
 			{
-				if(!isShared) id = "root";      				
+				if(mode == 0) id = "root";
+				else if(mode == 3 )
+				{
+					if(path.length == 2 && path[1] == "")
+					{
+						checkFile("root", path[0], null, null);
+						return;
+					}
+					else
+					{
+						id = "root";
+					}
+				}
+				else if(mode == 2) id = "appDataFolder";
 				else if(path.length == 1 && path[0] == "")
 				{
 					listDrives(null, []);
@@ -147,10 +197,14 @@
 				'pageToken' : pageToken,
 				'pageSize': 1000,
 				'fields': "nextPageToken, files(id, name, size, modifiedTime, kind, mimeType, trashed)",};
-				if(isShared) 
+				if(mode == 1) 
 				{
 					req['supportsAllDrives'] = true;
 					req['includeItemsFromAllDrives'] = true;
+				}
+				else if(mode == 2)
+				{
+					req['spaces'] = "appDataFolder";
 				}
 				gapi.client.drive.files.list(req)
 				.then(function(response) {
@@ -189,7 +243,7 @@
 					{
 						out.push([drives[i].name, -1, Math.round(Date.parse(drives[i].createdTime)/1000)])
 					}
-					if(pageToken) listDir(pageToken,query,out);
+					if(pageToken) listDrives(pageToken,out);
 					else { send(0,out); }
 				})
 				.catch(handleError);
@@ -202,10 +256,14 @@
 					'pageToken' : pageToken,
 					'pageSize': 1000,	                	
 					'fields': "nextPageToken, files(id, name, size, modifiedTime, kind, mimeType, thumbnailLink, trashed)",};
-					if(isShared) 
+					if(mode == 1) 
 					{
 						req['supportsAllDrives'] = true;
 						req['includeItemsFromAllDrives'] = true;
+					}
+					else if(mode == 2)
+					{
+						req['spaces'] = "appDataFolder";
 					}
 					gapi.client.drive.files.list(req)
 					.then(function(response) {		      			
@@ -233,7 +291,7 @@
 				{
 					var xhr = new XMLHttpRequest();
 					var shared = "";
-					if(isShared) shared = "&supportsAllDrives=true";
+					if(mode == 1) shared = "&supportsAllDrives=true";
 					xhr.open('GET', "https://www.googleapis.com/drive/v3/files/" + fileId + "?alt=media" + shared);
 					xhr.responseType = "arraybuffer";
 					xhr.setRequestHeader('Authorization', 'Bearer ' + gapi.client.getToken().access_token);
@@ -246,7 +304,7 @@
 				{
 					var xhr = new XMLHttpRequest();
 					var shared = "";
-					if(isShared) shared = "&supportsAllDrives=true";
+					if(mode == 1) shared = "&supportsAllDrives=true";
 					xhr.open('GET', "https://www.googleapis.com/drive/v3/files/" + fileId + "?fields=thumbnailLink" + shared);
 					xhr.setRequestHeader('Authorization', 'Bearer ' + gapi.client.getToken().access_token);
 					xhr.onload = function(e)
@@ -270,9 +328,9 @@
 
 				function deleteFile(fileId)
 				{
-					if(isShared) { trashFile(fileId); return; }
+					if(mode == 1) { trashFile(fileId); return; }
 					var req = { 'fileId' : fileId, };
-					if(isShared) req['supportsAllDrives'] = true;
+					//if(isShared) req['supportsAllDrives'] = true;
 					gapi.client.drive.files.delete(req)
 					.then(function(response) {
 						send(0,"");	            			            	
@@ -292,7 +350,7 @@
 							'trashed' : true,
 						}
 					};
-					if(isShared) req['supportsAllDrives'] = true;
+					if(mode == 1) req['supportsAllDrives'] = true;
 					gapi.client.drive.files.update(req)
 					.then(function(response) {
 						send(0,"");	            			            	
@@ -313,9 +371,15 @@
 							'mimeType': 'application/vnd.google-apps.folder',      					
 						}
 					}
-					if(isShared) req['supportsAllDrives'] = true;
+					if(mode == 1) req['supportsAllDrives'] = true;
 					gapi.client.drive.files.create(	req	)
-					.then(function(response) {      				
+					.then(function(response) {
+						if(response.result.name == mode3dir)
+						{
+							var query = "'" + response.result.id + "' in parents";
+							listDir(null, query, [])
+							return;
+						}
 						send(0,"");	            			            	
 					})
 					.catch(function(response) {
@@ -333,7 +397,7 @@
 							'name' : newName,
 						}
 					};
-					if(isShared) req['supportsAllDrives'] = true;
+					if(mode == 1) req['supportsAllDrives'] = true;
 					gapi.client.drive.files.update(req)
 					.then(function(response) {
 						send(0,"");	            			            	
@@ -345,6 +409,7 @@
 				}
 
       		//check if file exists, then overwrite, otherwise create new file.
+      		//if buffer is null, we check whether direcory exist and if not, we create it
       		function checkFile(parentId, name, pageToken, buffer)
       		{
       			var query = "'" + parentId + "' in parents";
@@ -353,10 +418,14 @@
       				'pageToken' : pageToken,
       				'pageSize': 1000,	                
       				'fields': "nextPageToken, files(id, name, trashed)",};
-      				if(isShared)
+      				if(mode == 1)
       				{
       					req['supportsAllDrives'] = true;
       					req['includeItemsFromAllDrives'] = true;
+      				}
+      				else if(mode == 2)
+      				{
+      					req['spaces'] = "appDataFolder";
       				}
       				gapi.client.drive.files.list(req)
       				.then(function(response) {
@@ -369,12 +438,18 @@
       						if(files[i].name == name)
       						{
       							found = true;
-      							uploadFile(files[i].id,parentId,name,buffer);
+      							if(buffer) { uploadFile(files[i].id,parentId,name,buffer); }
+      							else
+      							{
+      								query = "'" + files[i].id + "' in parents";
+									listDir(null, query, []);
+      							} 
       							return;
       						}
       					}
       					if(!found && pageToken) checkFile(parentId, name, pageToken, buffer);
-      					else uploadFile(null,parentId,name,buffer);
+      					else if(buffer) uploadFile(null,parentId,name,buffer);
+      					else { createDir('root', name)}
       				})
       				.catch(handleError);
       			}
@@ -392,7 +467,7 @@
       					metadata['Content-Type'] = contentType;
       					metadata['Content-Length'] = file.size;
       					var shared = "";
-      					if(isShared) shared = "&supportsAllDrives=true";
+      					if(mode == 1) shared = "&supportsAllDrives=true";
       					if(!fileId)	xhr.open("POST", "https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable" + shared);
       					else xhr.open("PATCH", "https://www.googleapis.com/upload/drive/v3/files/" + fileId + "?uploadType=resumable" + shared);
       					xhr.setRequestHeader('Authorization', 'Bearer ' + gapi.client.getToken().access_token);
@@ -430,7 +505,7 @@
       					form.append('metadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
       					form.append('file', file);
       					var shared = "";
-      					if(isShared) shared = "&supportsAllDrives=true";
+      					if(mode == 1) shared = "&supportsAllDrives=true";
       					if(!fileId) xhr.open('POST', 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id' + shared);
       					else xhr.open('PATCH', 'https://www.googleapis.com/upload/drive/v3/files/' + fileId + '?uploadType=multipart&fields=id' + shared);	
       					xhr.setRequestHeader('Authorization', 'Bearer ' + gapi.client.getToken().access_token);
@@ -442,12 +517,27 @@
 
       			function signOutUser()
       			{	
-      				localStorage.removeItem("googledriveAccessToken");
-      				localStorage.removeItem("googledriveAccessTokenValidUntil");
+      				if(mode == 2)
+      				{
+      					localStorage.removeItem("googledriveAppFolderAccessToken");
+      					localStorage.removeItem("googledriveAppFolderAccessTokenValidUntil");
+      				}
+      				if(mode == 3)
+      				{
+      					localStorage.removeItem("googledriveFileAccessToken");
+      					localStorage.removeItem("googledriveFileAccessTokenValidUntil");
+      				}
+      				else
+      				{
+      					localStorage.removeItem("googledriveAccessToken");
+      					localStorage.removeItem("googledriveAccessTokenValidUntil");
+      				}
+      				gapi.client.setToken('');					
+      				send("ready", false);
       				var cred = gapi.client.getToken();
       				if (cred !== null) {
       					google.accounts.oauth2.revoke(cred.access_token, () => {console.log('Revoked: ' + cred.access_token)});
-      					gapi.client.setToken('');					
+      					gapi.client.setToken("");
       				}
       			}
 
@@ -463,17 +553,21 @@
       				if(e.origin && (e.origin == "https://accounts.google.com" || e.origin == "https://content.googleapis.com")) { return; }
       				if((typeof e.data) == "string") {
       					var msg = JSON.parse(e.data);					
+      					if(mode == 3 && msg.code != "forget")
+      					{
+      						msg.prm = "/" + mode3dir + msg.prm;
+      					}
       					console.log(msg);
-					//TODO: cannot list directory if name contains forwardslash
-					if(msg.code=="show") { doAction(listDir, { "path" : msg.prm }) }					
-						else if(msg.code=="load") { doAction(downloadFile, { "path" : msg.prm }); }
-					else if(msg.code=="delete") { doAction(deleteFile, { "path" : msg.prm }); }
-					else if(msg.code=="save" && msg.prm.endsWith("/")) { doAction(createDir, { "path" : msg.prm.slice(0, -1) }); }
-					//TODO: will not work if filename contains colon(s)
-					else if(msg.code=="rename") { doAction(renameFile, {"path" : msg.prm }); }
-					else if(msg.code=="forget") { doAction(signOutUser); }
-					lastMsg=msg;
-				}
+						//TODO: cannot list directory if name contains forwardslash
+						if(msg.code=="show") { doAction(listDir, { "path" : msg.prm }) }					
+							else if(msg.code=="load") { doAction(downloadFile, { "path" : msg.prm }); }
+						else if(msg.code=="delete") { doAction(deleteFile, { "path" : msg.prm }); }
+						else if(msg.code=="save" && msg.prm.endsWith("/")) { doAction(createDir, { "path" : msg.prm.slice(0, -1) }); }
+						//TODO: will not work if filename contains colon(s)
+						else if(msg.code=="rename") { doAction(renameFile, {"path" : msg.prm }); }
+						else if(msg.code=="forget") { doAction(signOutUser); }
+						lastMsg=msg;
+					}
 				else {
 					if(lastMsg.code=="save") doAction(checkFile, { "path": lastMsg.prm, "buffer" : e.data });
 				}				

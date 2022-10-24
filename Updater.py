@@ -1,8 +1,9 @@
 #!/bin/python3
 import requests
-import os
+import os, sys
 import re
 import json
+sys.path.insert(0,"_vendor")
 from tqdm import tqdm
 from dataclasses import dataclass
 import glob

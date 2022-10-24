@@ -3,7 +3,7 @@
 <html>
 <head>
 		<script>
-			var lastMsg, allowed=false, dir=null;
+			var lastMsg, allowed=false, dir=null, noThumbs=null;
 			
 			var locStor = {};
 			
@@ -117,6 +117,8 @@
 				if(ext=="jpeg") ext="jpg";
 				if(ext=="tiff") ext="tif";
 				if(["dng","cr2","nef","arw","3fr","fff","gpr"].indexOf(ext)!=-1) ext="tif";
+				
+				if(noThumbs) ext="---";
 				var thmb=null;
 				if(thmb==null && (ext=="jpg" || ext=="tif")) {  // || ext=="--psd"
 					var lim = 130000;
@@ -202,10 +204,11 @@
 			
 			async function askPermissions() {
 				if(dir)	{ 
-					if(await dir.requestPermission({mode:"readwrite"})!="granted") return;
+					if(await dir.requestPermission({mode:"readwrite"})!="granted") {  send("1","You must give Photopea access to some folder.");  return;  }
 				}
 				else {
-					dir = await window.showDirectoryPicker();
+					try { dir = await window.showDirectoryPicker(); } 
+					catch(e) {  send("1","You must give Photopea access to some folder.");  return;  }
 					locStor.fset = dir;
 				
 					var os = locStor.db["transaction"](["rsrc"], "readwrite")["objectStore"]("rsrc");
@@ -229,7 +232,8 @@
 					
 					
 					if(msg.code=="show") {
-						printFolder(msg.prm);
+						noThumbs=msg.nothumbs;
+						printFolder(msg.prm);  
 					}
 					else if(msg.code=="load") {
 						printFile(msg.prm);

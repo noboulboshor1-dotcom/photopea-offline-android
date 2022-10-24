@@ -1,9 +1,12 @@
 #!/bin/python3
+
+import sys
+sys.path.insert(0,"_vendor")
+
 import requests
-import os, sys
+import os
 import re
 import json
-sys.path.insert(0,"_vendor")
 from tqdm import tqdm
 from dataclasses import dataclass
 import glob
@@ -30,13 +33,29 @@ urls = [
     "code/storages/deviceStorage.html",
     "code/storages/googledriveStorage.html",
     "code/storages/dropboxStorage.html",
-    "rsrc/basic/fa_basic.csh"
+    "rsrc/basic/fa_basic.csh",
+    "img/nft.png",
+    ["templates/?type=0&rsrc=","templates/?type=0.html"],
+    ["templates/?type=1&rsrc=","templates/?type=1.html"],
+    ["templates/?type=2&rsrc=","templates/?type=2.html"],
+    ["templates/?type=3&rsrc=","templates/?type=3.html"],
+    "templates/templates.js",
+    "templates/templates.css"
 ]
 
 
 
 #Update files
 def dl_file(path):
+    if isinstance(path,list):
+        output=path[1]
+        path=path[0]
+    else:
+        output=path
+        path=path
+    outfn = root + output
+    if os.path.exists(outfn):
+            return
     with tqdm(desc=path, unit="B", unit_scale=True) as progress_bar:
         r = requests.get(website + path, stream=True)
         progress_bar.total = int(r.headers.get("Content-Length", 0))
@@ -44,8 +63,8 @@ def dl_file(path):
         if r.status_code != 200:
             progress_bar.desc += "ERROR: HTTP Status %d" % r.status_code
             return
-
-        outfn = root + path
+        
+        
         os.makedirs(os.path.dirname(outfn), exist_ok=True)
         with open(outfn, "wb") as outf:
             for chunk in r.iter_content(chunk_size=1024):
@@ -145,3 +164,7 @@ find_and_replace('code/storages/dropboxStorage.html', 'var redirectUri = window.
 find_and_replace('index.html','https://connect.facebook.net','')
 
 find_and_replace('index.html','https://www.facebook.com','')
+
+#Redirect dynamic pages to static equivalent
+find_and_replace('code/pp/pp.js','"&rsrc="','".html"')
+find_and_replace('code/pp/pp.js','"templates/?type="','"templates/%3Ftype="')

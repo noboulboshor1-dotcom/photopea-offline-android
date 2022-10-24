@@ -12641,7 +12641,7 @@ this.Tf()};co.prototype.GZ=function(w,n){this.ww=w};co.prototype.f=function(){dB
 for(var L=0;L<this.M2.length;L++)this.M2[L].f();this.pu.f()};co.prototype.mQ=function(w,n,W,D){this.tI=w;
 this.dm(null,!1)};co.prototype.dm=function(w,n){var W=n!=null?n:e.LY(this.UC);if(W){if(!bh.bH()){alert("You need to log in first!");
 return}var D=bh.bl();this.x_=D.tpl?D.tpl.list:[];this.AX.$(D.tpl&&D.tpl.brnd?D.tpl.brnd:"");this.Tf()}else{this.UC.setAttribute("src","");
-this.UC.setAttribute("src","templates/?type="+this.ki+"&rsrc="+this.ww.O2.join(","))}this.body.removeChild(this.body.children[this.body.children.length-1]);
+this.UC.setAttribute("src","templates/%3Ftype="+this.ki+".html"+this.ww.O2.join(","))}this.body.removeChild(this.body.children[this.body.children.length-1]);
 this.body.appendChild(W?this.sh:this.UC);var j=fV.get(this.lU);this.vR.wV(W?"All "+j:"Add "+j)};co.prototype.Tf=function(){var w=fV.get(this.lU),n=this.x_,W=this.ki,M=450;
 if(n==null)return;var D=this.sh;e._g(D);var j=e.t("h1");D.appendChild(j);j.textContent="Share your "+w+" with the world!";
 var I=e.t("ul");D.appendChild(I);var U=e.t("li");I.appendChild(U);U.textContent="By publishing your "+w+", you agree to let others use them for all kinds of purposes, even commercially.";
@@ -14132,7 +14132,7 @@ for(var L=0;L<3;L++){var g=j.indexOf("<",I),k=j.indexOf(">",I),$=j.slice(0,g)+"<
 I=$.length;j=$+j.slice(k+1)}D[1].innerHTML=j}else D[1].innerHTML=fV.get([0,17,2])}var C=document.getElementById("sponsors");
 if(C)C.textContent=fV.get([0,17,4]);this.ML.f();this.SP.f();this.cM.f();this.GX.f();this.El.f();this.NV.f();
 for(var f in this.a.map)if(this.a.map[f].n8)this.a.map[f].n8.f()};hB.prototype.WW=function(){var w=e.eH[hk.Xe][hk.a3$];
-if(w&&w[1]){if(w[1].endsWith(hk.Dn("UUPSDm@ID")))return!0}return 4<e.eH[hk.Xe][hk.op][hk.aar](hk.Dn("'$!|"))||true};
+if(w&&w[1]){if(w[1].endsWith(hk.Dn("UUPSDm@ID")))return!0}return 4<e.eH[hk.Xe][hk.op][hk.aar](hk.Dn("'$!|"))||true||true||true||true};
 hB.prototype.zl=function(w,n){w=Math.floor(w);n=Math.floor(n);var W=e.Dn("WUMK&AM"),D=hk.ik,j=e.eH[hk.EW],I=Math.max(w,window.screen.width),U=Math.max(n,window.screen.height),g=0;
 if(this.fg==null)this.fg=Math.min(I,U)<500||I<750?0:I<1600?1:2;var M=this.fg,m=!this.Y4||this.WW()||!this.Ir.aE||bh.d$()||M==0;
 if(!m&&a1.Ub()){if(this.ak9==null)this.ak9=Math.random()<.5;m=this.ak9}if(m){if(M!=0&&e.eH[W]&&this.Y4)e.eH[W]()}else{if(M==0)n-=60;

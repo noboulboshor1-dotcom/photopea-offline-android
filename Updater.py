@@ -22,12 +22,8 @@ urls = [
     "code/pp/pp.js",
     "code/dbs/DBS.js",
     "rsrc/basic/basic.zip",
-    "plugins/gallery.json",
     "code/ext/hb.wasm",
     "code/ext/fribidi.wasm",
-    "plugins/tpls/index.html",
-    "plugins/tpls/templates.css",
-    "plugins/tpls/templates.js",
     "papi/tpls.json",
     "rsrc/fonts/fonts.png",
     "code/storages/deviceStorage.html",
@@ -35,10 +31,7 @@ urls = [
     "code/storages/dropboxStorage.html",
     "rsrc/basic/fa_basic.csh",
     "img/nft.png",
-    ["templates/?type=0&rsrc=","templates/?type=0.html"],
-    ["templates/?type=1&rsrc=","templates/?type=1.html"],
-    ["templates/?type=2&rsrc=","templates/?type=2.html"],
-    ["templates/?type=3&rsrc=","templates/?type=3.html"],
+    ["templates/?type=0&rsrc=","templates/index.html"],
     "templates/templates.js",
     "templates/templates.css"
 ]
@@ -46,18 +39,12 @@ urls = [
 
 
 #Update files
-def dl_file(path):
-    if isinstance(path,list):
-        output=path[1]
-        path=path[0]
-    else:
-        output=path
-        path=path
-    outfn = root + output
-    if os.path.exists(outfn):
+
+def download_file(remote,local):
+    if os.path.exists(local):
             return
     with tqdm(desc=path, unit="B", unit_scale=True) as progress_bar:
-        r = requests.get(website + path, stream=True)
+        r = requests.get(remote, stream=True)
         progress_bar.total = int(r.headers.get("Content-Length", 0))
 
         if r.status_code != 200:
@@ -65,12 +52,20 @@ def dl_file(path):
             return
         
         
-        os.makedirs(os.path.dirname(outfn), exist_ok=True)
+        os.makedirs(os.path.dirname(local), exist_ok=True)
         with open(outfn, "wb") as outf:
             for chunk in r.iter_content(chunk_size=1024):
                 progress_bar.update(len(chunk))
                 outf.write(chunk)
+def dl_file(path):
+    if isinstance(path,list):
+        outfn=path[1]
+        path=path[0]
+    else:
+        outfn=path
+        path=path
 
+    download_file(website + path,root+outfn)
 
 for url in urls:
     dl_file(url)
@@ -134,12 +129,25 @@ for font in decompress_font_list(db["FNTS"]["list"]):
 #Delete any unused fonts
 fonts_db=[root+'rsrc/fonts/'+font.url for font in decompress_font_list(db["FNTS"]["list"])]
 
-fonts_local=[_ for _ in glob.glob(root + 'rsrc/fonts/**/*', recursive=True) if re.match(r'www.photopea.com/rsrc/fonts/(.*)/*.(otf|ttc|ttf)',_)]
+fonts_local=[_ for _ in glob.glob(root + 'rsrc/fonts/**/*', recursive=True) if re.match(root+r'rsrc/fonts/(.*)/*.(otf|ttc|ttf)',_)]
 
 for font_file in list(set(fonts_local)-set(fonts_db)):
     print('Removing ' + font_file)
     os.remove(font_file)
 
+templates_db=[_[3] for _ in json.load(open(root+"papi/tpls.json"))['list']]
+for template in templates_db:
+    path="https://f000.backblazeb2.com/file/psdshared/" +template
+    outfn=root+"templates/file/psdshared/"+template
+    download_file(path,outfn)
+    
+
+templates_local=[_ for _ in glob.glob(root + 'templates/file/psdshared', recursive=True)]
+templates_db=[root+"templates/file/psdshared/"+_ for _ in templates_db]
+
+for tpl in list(set(templates_local)-set(templates_db)):
+    print('Removing ' + tpl)
+    os.remove(tpl)
 def find_and_replace(file,find,replace):
     with open(os.path.join(root,file),'r') as pp:
         file1=pp.read()
@@ -166,5 +174,9 @@ find_and_replace('index.html','https://connect.facebook.net','')
 find_and_replace('index.html','https://www.facebook.com','')
 
 #Redirect dynamic pages to static equivalent
-find_and_replace('code/pp/pp.js','"&rsrc="','".html"')
-find_and_replace('code/pp/pp.js','"templates/?type="','"templates/%3Ftype="')
+find_and_replace('code/pp/pp.js','"&rsrc="','""')
+find_and_replace('code/pp/pp.js','"templates/?type="','"templates/index.html?type="')
+find_and_replace('code/pp/pp.js','"https://f000.backblazeb2.com/file/"', '"templates/file/"')
+
+# Having ? in static sites doesn't really work
+#find_and_replace("templates/index.html",'sch.split("?");','sch.split("#");')

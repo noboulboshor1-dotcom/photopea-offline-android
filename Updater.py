@@ -135,19 +135,20 @@ for font_file in list(set(fonts_local)-set(fonts_db)):
     print('Removing ' + font_file)
     os.remove(font_file)
 
-templates_db=[_[3] for _ in json.load(open(root+"papi/tpls.json"))['list']]
+templates_db=['file/' + ('psdshared' if _[4].startswith("https://i.imgur.com/") else 'pp-resources') +'/' + _[3] for _ in json.load(open(root+"papi/tpls.json"))['list']]
 for template in templates_db:
-    path="https://f000.backblazeb2.com/file/psdshared/" +template
-    outfn=root+"templates/file/psdshared/"+template
+    path="https://f000.backblazeb2.com/" + template
+    outfn=root+"templates/"+template
     download_file(path,outfn)
     
 
-templates_local=[_ for _ in glob.glob(root + 'templates/file/psdshared', recursive=True)]
-templates_db=[root+"templates/file/psdshared/"+_ for _ in templates_db]
+templates_local=[_ for _ in glob.glob(root + 'templates/file/**/*', recursive=True)]
+templates_db=[root+"templates/"+_ for _ in templates_db]
 
 for tpl in list(set(templates_local)-set(templates_db)):
     print('Removing ' + tpl)
     os.remove(tpl)
+    
 def find_and_replace(file,find,replace):
     with open(os.path.join(root,file),'r') as pp:
         file1=pp.read()

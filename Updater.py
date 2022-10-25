@@ -135,7 +135,7 @@ for font_file in list(set(fonts_local)-set(fonts_db)):
     print('Removing ' + font_file)
     os.remove(font_file)
 
-templates_db=['file/' + ('psdshared' if _[4].startswith("https://i.imgur.com/") else 'pp-resources') +'/' + _[3] for _ in json.load(open(root+"papi/tpls.json"))['list']]
+templates_db=['file/' + ('psdshared' if _[4].startswith("https://i.imgur.com/") or _[4].startswith("https://imgur.com/") else 'pp-resources') +'/' + _[3] for _ in json.load(open(root+"papi/tpls.json"))['list']]
 for template in templates_db:
     path="https://f000.backblazeb2.com/" + template
     outfn=root+"templates/"+template

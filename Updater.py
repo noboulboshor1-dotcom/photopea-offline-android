@@ -142,7 +142,7 @@ for template in templates_db:
     download_file(path,outfn)
     
 
-templates_local=[_ for _ in glob.glob(root + 'templates/file/**/*', recursive=True)]
+templates_local=[_ for _ in glob.glob(root + 'templates/file/**/*', recursive=True) if _.endswith(".psd")]
 templates_db=[root+"templates/"+_ for _ in templates_db]
 
 for tpl in list(set(templates_local)-set(templates_db)):

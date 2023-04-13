@@ -333,6 +333,8 @@
 		border-top-left-radius:4px;
 		border-top-right-radius:4px;
 		
+		opacity: 0.7;
+		
 		margin-right:4px;
 		
 		transition: background 0.25s ease-in-out;
@@ -351,6 +353,11 @@
 	.block .panelhead .active
 	{
 		background-color: var(--base);
+		opacity:1;
+	}
+	.block .panelhead .active div
+	{
+		
 	}
 	
 	.block .panelhead div .cross

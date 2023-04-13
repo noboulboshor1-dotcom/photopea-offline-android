@@ -42,8 +42,9 @@ urls = [
 
 def download_file(remote,local):
     if os.path.exists(local):
-            return
-    with tqdm(desc=path, unit="B", unit_scale=True) as progress_bar:
+            #return --- Maybe make some flag for this
+            pass
+    with tqdm(desc=local, unit="B", unit_scale=True) as progress_bar:
         r = requests.get(remote, stream=True)
         progress_bar.total = int(r.headers.get("Content-Length", 0))
 
@@ -53,7 +54,7 @@ def download_file(remote,local):
         
         
         os.makedirs(os.path.dirname(local), exist_ok=True)
-        with open(outfn, "wb") as outf:
+        with open(local, "wb") as outf:
             for chunk in r.iter_content(chunk_size=1024):
                 progress_bar.update(len(chunk))
                 outf.write(chunk)
@@ -119,35 +120,37 @@ def decompress_font_list(flist):
 
         prev_ff, prev_fsf, prev_flg, prev_cat = ff, fsf, flg, cat
 
-for font in decompress_font_list(db["FNTS"]["list"]):
-    path = "rsrc/fonts/" + font.url
-    if not os.path.isfile(root + path):
-        print("Downloading " + font.url)
-        dl_file(path)
-        print("\n")
-
-#Delete any unused fonts
-fonts_db=[root+'rsrc/fonts/'+font.url for font in decompress_font_list(db["FNTS"]["list"])]
-
-fonts_local=[_ for _ in glob.glob(root + 'rsrc/fonts/**/*', recursive=True) if re.match(root+r'rsrc/fonts/(.*)/*.(otf|ttc|ttf)',_)]
-
-for font_file in list(set(fonts_local)-set(fonts_db)):
-    print('Removing ' + font_file)
-    os.remove(font_file)
-
-templates_db=['file/' + ('psdshared' if _[4].startswith("https://i.imgur.com/") or _[4].startswith("https://imgur.com/") else 'pp-resources') +'/' + _[3] for _ in json.load(open(root+"papi/tpls.json"))['list']]
-for template in templates_db:
-    path="https://f000.backblazeb2.com/" + template
-    outfn=root+"templates/"+template
-    download_file(path,outfn)
+if '--fonts' in sys.argv:
+    for font in decompress_font_list(db["FNTS"]["list"]):
+        path = "rsrc/fonts/" + font.url
+        if not os.path.isfile(root + path):
+            print("Downloading " + font.url)
+            dl_file(path)
+            print("\n")
     
+    #Delete any unused fonts
+    fonts_db=[root+'rsrc/fonts/'+font.url for font in decompress_font_list(db["FNTS"]["list"])]
+    
+    fonts_local=[_ for _ in glob.glob(root + 'rsrc/fonts/**/*', recursive=True) if re.match(root+r'rsrc/fonts/(.*)/*.(otf|ttc|ttf)',_)]
+    
+    for font_file in list(set(fonts_local)-set(fonts_db)):
+        print('Removing ' + font_file)
+        os.remove(font_file)
 
-templates_local=[_ for _ in glob.glob(root + 'templates/file/**/*', recursive=True) if _.endswith(".psd")]
-templates_db=[root+"templates/"+_ for _ in templates_db]
-
-for tpl in list(set(templates_local)-set(templates_db)):
-    print('Removing ' + tpl)
-    os.remove(tpl)
+if '--templates' in sys.argv:
+    templates_db=['file/' + ('psdshared' if _[4].startswith("https://i.imgur.com/") or _[4].startswith("https://imgur.com/") else 'pp-resources') +'/' + _[3] for _ in json.load(open(root+"papi/tpls.json"))['list']]
+    for template in templates_db:
+        path="https://f000.backblazeb2.com/" + template
+        outfn=root+"templates/"+template
+        download_file(path,outfn)
+        
+    
+    templates_local=[_ for _ in glob.glob(root + 'templates/file/**/*', recursive=True) if _.endswith(".psd")]
+    templates_db=[root+"templates/"+_ for _ in templates_db]
+    
+    for tpl in list(set(templates_local)-set(templates_db)):
+        print('Removing ' + tpl)
+        os.remove(tpl)
     
 def find_and_replace(file,find,replace):
     with open(os.path.join(root,file),'r') as pp:

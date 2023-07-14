@@ -13,6 +13,9 @@ If there are any issues, please let me know.
 1. In the folder, type this: `python -m http.server --directory www.photopea.com 8080`
 1. Open [http://localhost:8080](http://localhost:8080). It should load and you can use it like normal.
 
+## Notes
+If you want to download the fonts, just append `--fonts` to the Updater.py file.
+
 ## Related Projects
 Note: These projects are not officially associated with this one
 * [https://github.com/tim0-12432/photopea](https://github.com/tim0-12432/photopea) -- Electron wrapper for the project

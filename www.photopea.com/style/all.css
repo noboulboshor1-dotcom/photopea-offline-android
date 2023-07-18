@@ -1165,6 +1165,16 @@ input[type="checkbox"]:checked + label:before {  content: "\2713";  }
 		display:inline-block;
 		min-width:4em;
 	}
+	.label6  .flabel
+	{
+		display:inline-block;
+		min-width:6em;
+	}
+	.label8  .flabel
+	{
+		display:inline-block;
+		min-width:8em;
+	}
 	.label12  .flabel
 	{
 		display:inline-block;

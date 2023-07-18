@@ -71,7 +71,7 @@ def dl_file(path):
 for url in urls:
     dl_file(url)
 
-db_data = open(root + "code/dbs/DBS.js").read()
+db_data = open(root + "code/dbs/DBS.js",encoding="utf-8").read()
 db_vars = re.findall(r"var (\w+)\s*=\s*(\{[\w\W]+?\n\s*\})\s*(?=;|/\*|var)", db_data)
 db = {}
 
@@ -119,7 +119,8 @@ def decompress_font_list(flist):
         yield Font(ff, fsf, psn, int(flg), int(cat), url)
 
         prev_ff, prev_fsf, prev_flg, prev_cat = ff, fsf, flg, cat
-
+for  font in decompress_font_list(db["FNTS"]["list"]):
+    print(font.url)
 if '--fonts' in sys.argv:
     for font in decompress_font_list(db["FNTS"]["list"]):
         path = "rsrc/fonts/" + font.url

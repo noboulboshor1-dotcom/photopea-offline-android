@@ -119,8 +119,7 @@ def decompress_font_list(flist):
         yield Font(ff, fsf, psn, int(flg), int(cat), url)
 
         prev_ff, prev_fsf, prev_flg, prev_cat = ff, fsf, flg, cat
-for  font in decompress_font_list(db["FNTS"]["list"]):
-    print(font.url)
+
 if '--fonts' in sys.argv:
     for font in decompress_font_list(db["FNTS"]["list"]):
         path = "rsrc/fonts/" + font.url

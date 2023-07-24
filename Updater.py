@@ -29,11 +29,15 @@ urls = [
     "code/storages/deviceStorage.html",
     "code/storages/googledriveStorage.html",
     "code/storages/dropboxStorage.html",
-    "rsrc/basic/fa_basic.csh",
     "img/nft.png",
     ["templates/?type=0&rsrc=","templates/index.html"],
     "templates/templates.js",
-    "templates/templates.css"
+    "templates/templates.css",
+    "plugins/gallery.json",
+    "plugins/gallery.html",
+    "img/wows_logo.png",
+    "promo/icon512.png"
+    
 ]
 
 

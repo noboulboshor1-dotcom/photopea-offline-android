@@ -187,6 +187,6 @@ find_and_replace('code/pp/pp.js','"templates/?type="','"templates/index.html?typ
 find_and_replace('code/pp/pp.js','"https://f000.backblazeb2.com/file/"', '"templates/file/"')
 
 #Force enable Remove BG, and any other options that are disabled on self-hosted instances (much more brittle to changes than the other replacements)
-#find_and_replace("code/pp/pp.js",'("~yy")','("~yy")||true;')
+find_and_replace("code/pp/pp.js",'("~yy")','("~yy")||true')
 # Having ? in static sites doesn't really work
 #find_and_replace("templates/index.html",'sch.split("?");','sch.split("#");')

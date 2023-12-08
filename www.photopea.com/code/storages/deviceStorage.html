@@ -204,11 +204,11 @@
 			
 			async function askPermissions() {
 				if(dir)	{ 
-					if(await dir.requestPermission({mode:"readwrite"})!="granted") {  send("1","You must give Photopea access to some folder.");  return;  }
+					if(await dir.requestPermission({mode:"readwrite"})!="granted") {  send("1","You must give us access to some folder.");  return;  }
 				}
 				else {
 					try { dir = await window.showDirectoryPicker(); } 
-					catch(e) {  send("1","You must give Photopea access to some folder.");  return;  }
+					catch(e) {  console.log(e);  send("1","You must give us access to some folder.");  return;  }
 					locStor.fset = dir;
 				
 					var os = locStor.db["transaction"](["rsrc"], "readwrite")["objectStore"]("rsrc");

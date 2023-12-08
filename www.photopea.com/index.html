@@ -37,14 +37,14 @@
 			function showCap() {_showCap(true);}   function hideCap() {_showCap(false);}
 			function _showCap(vis){
 				document.getElementById("cap").setAttribute("style", vis?"":"display:none;");
-				localStorage.setItem("capShown", ""+vis);
+				window["locStor"].setItem("capShown", ""+vis);
 			}
 		</script>
 	</head>
 	
 	<body class="theme0">		
 		<!---->
-		<div id="cap">
+		<div id="cap" style="display:none;">
 			<span style="position:absolute;right:0;top:0;font-size:7em;margin:0 0.2em;cursor:pointer;" onclick="hideCap()">✕</span>
 			<img style="width:8em; height:8em; margin-top:1em;" src="promo/icon512.png" alt="Photopea logo" />
 			<h1>Photopea: advanced photo editor</h1>
@@ -60,21 +60,11 @@
 		</div>
 		<!---->
 		
-		<script>if(localStorage.getItem("capShown")=="false" || window.self != window.top) hideCap();</script>
-		
 		<script src="code/ext/ext.js"></script>	
 		<script src="code/dbs/DBS.js"></script>
 		<script src="code/pp/pp.js"></script>	
 		
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		
-		<script async src="https:#/gtag/js?id=G-49YR1RB5KP"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag("js", new Date());  gtag('config', 'G-49YR1RB5KP');  //gtag("config", "UA-4249565-37");
-		</script>
-
+		<script>if(window["locStor"].getItem("capShown")=="false" || window.self != window.top) {}  else showCap();</script>
 	</body>
 
 </html>

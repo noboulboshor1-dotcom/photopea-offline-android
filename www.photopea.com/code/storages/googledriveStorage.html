@@ -20,7 +20,7 @@
 		//var isShared = false;
 		var sharedDrives = null;
 
-		var mode = 0; //0 = normal, 1 = shared drives, 2 = application folder, 3 = PP folder
+		var mode = 0; //0 = normal, 1 = shared drives, 2 = application folder, 3 = PP folder, 4 = Shared with me
 		
 		function go()
 		{
@@ -148,6 +148,7 @@
 					}
 				}
 				else if(mode == 2) id = "appDataFolder";
+				else if(mode == 4) id = "sharedWithMe";
 				else if(path.length == 1 && path[0] == "")
 				{
 					listDrives(null, []);
@@ -205,6 +206,10 @@
 				else if(mode == 2)
 				{
 					req['spaces'] = "appDataFolder";
+				}
+				else if(mode == 4 && req["q"] == "'sharedWithMe' in parents")
+				{
+					req['q'] = "sharedWithMe";
 				}
 				gapi.client.drive.files.list(req)
 				.then(function(response) {
@@ -264,6 +269,10 @@
 					else if(mode == 2)
 					{
 						req['spaces'] = "appDataFolder";
+					}
+					else if(mode == 4 && req["q"] == "'sharedWithMe' in parents")
+					{
+						req["q"] = "sharedWithMe";
 					}
 					gapi.client.drive.files.list(req)
 					.then(function(response) {		      			

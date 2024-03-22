@@ -299,7 +299,7 @@
 	function cost0(v) {
 		var age = (Date.now()*0.001 - v[2]) / (60*60*24);  // age in days
 		var cst = (v[7]+1) / age;  // usages per day
-		var ext = 20*Math.pow(Math.PI,-age*0.15);
+		var ext = 60*Math.pow(Math.PI,-age*0.15);
 		
 		return cst+ext;
 	}

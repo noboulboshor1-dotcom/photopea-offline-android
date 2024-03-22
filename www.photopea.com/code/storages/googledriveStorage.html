@@ -10,6 +10,8 @@
 	<script type="text/javascript">
 
 		var sentFalse = false;
+		var refreshToken = false;
+		var tmpAction, tmpPrms;
 		var clientId = "463342976776-04ub3ijsr7i5qobn8ha32ap6vsaae75a.apps.googleusercontent.com";
 		var scope = "https://www.googleapis.com/auth/drive";
 		var discoveryDocs = "https://www.googleapis.com/discovery/v1/apis/drive/v3/rest";
@@ -51,7 +53,15 @@
 				localStorage.setItem("googledriveAccessToken", e.access_token);
 				localStorage.setItem("googledriveAccessTokenValidUntil", Date.now() + e.expires_in * 1000);
 			}
-			send("ready", true);			        	
+			if(refreshToken)
+			{
+				refreshToken = false;
+				doAction(tmpAction,tmpPrms);
+			}
+			else
+			{
+				send("ready", true);
+			}
 		}
 
 		function gapiInit() {
@@ -117,7 +127,13 @@
 
 		function authorize(action,prms)
 		{
-			sentFalse = false;
+			if(sentFalse) sentFalse = false;
+			else
+			{
+				refreshToken = true;
+				tmpAction = action;
+				tmpPrms = prms;
+			}
 			client.requestAccessToken();
 		}
 
@@ -550,12 +566,23 @@
       				}
       			}
 
+      			function checkToken()
+      			{
+      				var until;
+      				if(mode == 2) until = localStorage.getItem("googledriveAppFolderAccessTokenValidUntil");
+					else if(mode == 3) until = localStorage.getItem("googledriveFileAccessTokenValidUntil");
+					else until = localStorage.getItem("googledriveAccessTokenValidUntil");
+					if(until && Date.now() < until)	{ return true; }
+					else { return false; }
+      			}
+
       			function doAction(action, prms)
       			{
-      				if(action == signOutUser) { signOutUser(); }      			
+      				if(action == signOutUser) { signOutUser(); }
+      				else if (!checkToken()) { authorize(action, prms); }
       				else if(sentFalse) { authorize(action, prms); }
-      				else if(!gapi.client.getToken()) { send("ready", false); sentFalse = true; }
-      				else { findFile(action, prms.path.slice(1).split("/"), null, null, prms.buffer); }      			
+      				else if(!gapi.client.getToken()) { send("ready", false); sentFalse = true; }   				
+      				else { findFile(action, prms.path.slice(1).split("/"), null, null, prms.buffer); }
       			}
 
       			function onMessage(e) {

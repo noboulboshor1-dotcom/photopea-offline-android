@@ -144,6 +144,14 @@ var PIMG = {
 	"type/sub" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgBAMAAAB54XoeAAAAAXNSR0IB2cksfwAAABJQTFRFAAAAAAAAAAAAAAAAAAAAAAAA4CsZogAAAAZ0Uk5TAP8c3ZRhFMSQiQAAAxZJREFUeJzt2k1T2zAQBmCN4tzrmt790dxLbe4OgXsNzf//K42cGrRu0Ptus8wwg3SN8kQrKfpY27lccskll1xEKVOlP5Xh4fhUW4FLqYbH1hQM5h1JsuCJfKQi58GyHBhRA5Y3hKgCywqLOpBqo3Pt7lZ8y/m2DV9s293vg/yovGNA575LUPzaQYo/OXH/Jnj6NdFIohtDaRLgqv1c0JsU6Doh3jNgkQS96BFqpLdJ0G1FNzJNBKAMmmmiB6AXTRyvB90UV/hmAIpRI+YiBLUxQ1AOy1cIOgiKeXBjAIqYlevi5RpinH8ZgKITfxiAYuLgVRGDYiLgYcagi0cF/1cIMB4VPG8IsLEG42GuLMCNNVhYg9sPD+Il7iOB5iF/EtB82sT/FJPFwRyMFweTBTZeD022gCmqYrFJiT3FYhsVRweLjV4cbmoDULelKM82xBEWgqILifsZBMXRBo8JBuOImfseAkXERBdCUJwOx+tB7YEYgqKB1B08DYrLI3cFT4Ly1sMlCVKgF2kHMkeQAFc5EzKLIUC/NMKHRIvgyMyNIktHeixYPZEeCVZURoQH+fZx4EDnTSmwv68VHgIrJZcC+75/OGqC/RdUfzmDGcxgBj8h2B76nnraRYLnYwnztIsDl2OYSQ42lOelCj7hUGB0tYBnMAqcXuvAoBlQdR9lQHEfRTEzYEg6DK3fzUdQdCFlwOZv151Dr68HpyXQ+bnceD24fxmK8BQNpB04cOm4xga8fbmGhuH5YgEu+R9zsLABX8u7gAaD8o7gxmZiSxAsNzFYQ7DBC6IO3OOkqQoMyw3KcarAAo+JDuyISjGItosQMcw7x+AI6oa9RbWNIrAjohAg+FOFiPFZJAbBjCiYiAUI0oNUxAIEWy4zxqsbfZ2qSY2xfCKWrt9Rx0ORA05GFMYY52D9JMDU+yodMVHXb+ikUkjUJPTP5bq8KXaoi9v2uH4T61yGi28J4gZespbyPw1UgnMD0/8SHRgaCOaMCpyPrortE4JEA1Xg3MDREAwNVO0lCNzHDfRIJor8OXA+zGAGMfgHF14H/+Dc7McAAAAASUVORK5CYII=",
 	"type/sup" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgBAMAAAB54XoeAAAAAXNSR0IB2cksfwAAABJQTFRFAAAAAAAAAAAAAAAAAAAAAAAA4CsZogAAAAZ0Uk5TAP8c3pRhFoIu0AAAAxVJREFUeJzt2k1TszAQAGCGwt30406jvVvBO7V6t2r//1+RtAV287mBnfetM9mTQ/FxN0nTdCXLGEIe6/qj4pCusduLLho2Mb94Qqy4xG9xizWPWIghXljA0wiyFN2P4CU+GcASeCw1L9SKkfnueKmZAdzehu5aejUfPPWFPimwnQ8ehqnofhLPHGA/cFsecC82t58WXOASgA+cYDGCwhd1F837+asK0cVYshcc3qjNh2QFlfnqIyeAHenZ6dWktLGgb6dX4Gc86Ba344YYBTq30e6tt86mgI4c1XYD90N5/TAcIsulVL8o5e7niF8SrzZQTXKLrjxhEIY8YtG2Mz+ag3Fwgt1fQ0lahlFVvNaubT2glr9ZdGlJfOEDVUkg3mwv6x96hRfM0YjopwRVsTEQpRfMSjSMWoqFbaoCIC5aS9FWcZYHQHRI0Nbc3pzjMDies1Rs4Cu2OSaAaNbQFFhWNQV01qxe2FjuD4F4Wpb4emu5PwiidTBOgnURkkBU80g8WqeEAsLj6rjunAkSQDSIz+Ci/agZBtHCeQEJ2g/DYRAthOWYoHUPp4AZnJXNkKDrtE4A4ayshwQti5oKbnXwkmA7HYTTvOovmPsMHVzo4AEmmMeDhQ4KFNoJlgCWdw8aW9xdg+wl/xHQGwTQWDZzQfhOcb6F/ysINwfXLhgFwv1w6bgnCjyBW8JNFQK4B7eEv76Hwcg+UhhEh5uKATQ+UuaCcE7Cqyby9EXonAVBdLQh9PaCIKyY0n0MgahiwhAGQXQ6bOeDjgPxdBAlSOqO+kH05ZHWEPaC+FsPrX3rA3PUdiB2rD2g1jMh9pcRmPdJ5KrRgjhy118Qg9yip3pfRI8IroyOyDyQnh8NbPx901iwfqsivBC4iuR8YF3X7+eYYk0w+pcTmMAEJjCBCUxgAhOYwAT+W7BK4P2BHI/BIbC9e5DhCS4MhrvekSClPRgFcjxKiL/RV/M99B8xjscnUQ+Y8N+SYIInBJqP1MQGfkInroVky+9b6DFdlPKsP4l1jYbwlKAtbFYfkzJMYAJTpPh78QvJUwjDMnHmuQAAAABJRU5ErkJggg==",
 	"type/under" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgBAMAAAB54XoeAAAAAXNSR0IB2cksfwAAABJQTFRFAAAAAAAAAAAAAAAAAAAAAAAA4CsZogAAAAZ0Uk5TAP8f3WWWKA+IJAAAAj5JREFUeJzt2s9SwjAQBvBMhQeolTtEvKul94rlriDv/yoWHWbydSD7LexoHXePQH/kX9NkmxA8PEYWZS7qPpp9t55bgceomg/apMCDuYq2YE9uqVLyYFk2jKgByxkhqsCykkUdyNU6xOUTXNV/Eg8Xxrjc7PCrcsWAITwMwPTfdig+c+L7WbD/Nygk0YyHWGTAQfm5St/kwHAP4hsDTrNgAS3CjMYwyYJhAs24vR7ESs8IsBDAAorYXg+Gl/QHdwYgtAkxFkUwQJ3lkSOD0C23IhhEEOpM9LMIQj8r58XTv4B+bg1AaMRHAxBud3lWlEEYCHI3yyCMRPleIcC0V+RxQ4ALazDt5soCvLEGp9bgZPSgPMWNCTSv8j8BzYdNeqeYTA7mYDo5mEyw6Xxo8ghIZ2yLhxQ8Uyweo7B0aA1AWNzMDUDdI0W5tiGWsCIITUjsz0QQljatAZjWmNnvSSDUmGhCEYTVIbPbE0DtglgEoYDUHjwPwuaR24JnQdzpcUmCHFhA2oHMEWTAQc6EzGIAWBwLUcS4GWRFqP38AMwFWWEarNakR4IVk25QgHz5OJDLpNFgzWU4SbCqVaniLFjX9b4jM7pnQPXFDjrooIMOOuiggw466ODPgnMHxwe21iB17uBXQTkFrASJ99s6kEkPqkAiB6wDLQYivBGz6BXIAVOHQYSAN/rceZVs4Amdvlvaq7jitRyGJimFEWM3PIn1HU33dVRLHaesY1xUQgcd9PD4o5Eb2BcNegcd5MBP2qX9eK19CMoAAAAASUVORK5CYII=",
+	"lig/standard" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgBAMAAAB54XoeAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAACHRSTlMA/xPmQsl2qX4Lop4AAAFgSURBVHic7dTBT8IwFAbwZtZ5JqjnoQauTIJegRC8ipF4lbDg1R6Af9+Eg25f3dbXzujM9137+tt7bTOlGKYViebbw241Go1XL4dtNk8CtcUu7RQz3mczX06/ofaFenQaPZRwx3T30j61qeCOkXn9ZZ0nA/tV43qAsYMnAXX9vDJw7eIJwIG19z6bJerqZmG8wMga+PlzaeMDXqN3l/uYkYNWgxdJbjWWg2fY4FNheSoG8YoLDeZbdPR0dYNKpULwtLrB3ASOIE58iwU9IZgCOCkdwc2Lwbssr3AD8QiHoeAUwIlVoWWgKXpduyKSgXAn9hEKg8/6PBTES7bvRBj8MzyGgicAvoeCPQBfQ8H6ZygM/hoaB5NQ0DQNLpsGUwBDvRaAnT8LIuQaggQJEvxvYBksXSdIkCBBggQJEiRIkCBBggQJEiRIkCBBggR/AsTC7za51BAkSJBg20GG+cV8APNyY4Xz/L/WAAAAAElFTkSuQmCC",
+	"lig/context" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgBAMAAAB54XoeAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAACHRSTlMA/920XoYYNXT0+m0AAARdSURBVHic7ZpLV9swEIVTkjhb5EDZOuG1xZzSbh0amm1doGydlh62TUvL328c5zFXGk1GhsOix3eFJebzSDMay1ZarUaNGjVq1KhRo0aNGjX6r3R/dTN5QVzn3MwV370U78fAVHr3Qjyz1vsgw07BNw82QJOFAHtHXGuUEp7ZD3Ix50Z0aUCfQ4BT89Vp+448sxcC7Jg4s5p6AwtofoYQU5sY5TbPJCHA2dwARn3p8MLC0l1kb7G+/uXyjCm85owWKdJfLrGI8W+usxDgt8qmfzt5erpKWZ45CAF2eEbgJD48jseTv9XfuYJYiLT762WmxRdlwWvzjIunInpcTUEm4c6p2eGnVstJ5Ln6FSL6Ul36oxJ9tE0/rMICvPXiqCbkrY/Xy13jo8hxMd4stqrTt5x7qYMrfXSSmdaXReb3PeNlecbcWS6egtWobOKBzHirEaKL+wVYLRKVLTjsMl1oj97KqWcjwxdZaUmMyd9ODS8NubxJiVH/ZnxNJ25vU6VPXcucLYk0247LWYKQZ7+Xf3DP4TaXiLSwL2e9S4AHrT/lP/A7hXkuuvWGRiTbDGUdiaIVPY4nBccry7qT2dTB9d1oWRCflR23gNEZXDnY6hnmLqxSG0iXK1lGJCyxCJzZa48O7mTTPOL85tS1gSlvOSXNiejiEC/pIqFj2yHt8objEi+nHsO250au2nhJR5yQdpra8g6mB1dQFpziyXVs0dTnCNwp8Zm7oiOGqQKgfntAFwSuoY63R1Tb6wcAPQ8iRjPvTAFQzhsqOoUYS3wqFEoeTCEuWQRqt9K4GQI3EJjx9o4gC3GiILHVmU1rlJUb9YCwz8CagkDlThpjgo/Ddh0gepEIwIS1d7QDRmdCnxIIQbYmvhYQgmzl2ps6wBSMCsF7JRB3p9g3E+bXJ8waq0SNagBxuVpFNK8BxFSzHr51gJgZ1nMDA6ZbyxhIayOKActUQAzkLnaaGkApkBECdRVbmndMKc/bki1p3jGllE89ad6xsimfy9I0YY4qdw4ILKAPc1T3icsKJHZijuo2SxhIa95n0LnLE0Tg6xYb3VIWgSl06hYKAq1ASsVcB8RAYgYo81oCit7rgFgOu0KfEoipVmtnIwFx5WU6ICZ2An0z6Ct0wEgAwkJRv1QI85TSLvV71MAPhK6EN3eVeoHC64ak3Aus+Ro18gIhDfUnElMvEHoSNXDHCwTfMzWw6wXScOlfbTGWCemAlA/52D/wAL1fNrYpJ3a0OOi/2ViiwaQjm9UcMXhCs43GJAsB0qj0tzZrRFwhc0XzM+iECCcrW7eSWMVFGJCmdrJqpElzIhizoh+cGbdj3ZaBiBkzdZD5tL5F1LpykZ6DhM5gKVpXjub294QXeMJdCSpOfDikl2HH0ZyLKOfwRCf/UUqdAZfyHfawR/Qq5SzvuDaPPzBbnNPUFXOk98wfWayOOdfxdX8+ECp6zBrfFM/mzfVwez4cxMPDi5f83UujRq+rfxm+Ez0B07ZpAAAAAElFTkSuQmCC",
+	"lig/discr" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgBAMAAAB54XoeAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAACHRSTlMA/xpH58h2n6COU+kAAAToSURBVHic7ZrNV9swDMCzhNIrZsm4poWNa7sxuLbQjWvDYFzD2ODabCv8+6NzE0u27FhO3x57D51ax/rZlj8lO4pe5EX+F0nulrOpSD9dP7zfCO6HUJL9yrvy3k0FkvRXN96hMOR8tFlep0puU7wn+RLIiwsLUPwMA97YeCINsmPfyhPiTQiwcgBFudkKCrHHBwILZrd5vP8dExdcXmJ0wVE3K/aU7qlM0UYRt6NVi9N8nXSAgBMeL1aLwus6DU8cZpuBsjI/XnlyuzYhW5QinjolCzhu9DKVOEDAOQtYUbbaQsBdFnBK6eHJ89qubUpMDo8O3QzmyYJMFczpDOpSbgQIrAWmWIyAmV3dlJ4HMOUAyXGtAQUH+OrfACMMzC3KlAzoejxPIFR7RsCNdwoAws0oHAgGdrkRIJh6cEfHQAYPLg6TjQDB8gUX5nAgmLVw2WMD4+P75WwmZlePhWF74RALLrmfUrnnocATEtdsRlxg/NuafRQCjCt79tMQoIMnspwPPHJll5OFBbS5TGvZYwMrN1BwgW4PIgCoVTC7erwqugCxBc9lIGB/GQ5EB1PlDJ8EA2HzzkD6IVLwB8JDmhzDtRxBBX8gWO7FBfrSOCs84Bh8yfGnA03BhVFSqSz6oTQOAcIzmuEpjAOAcBQavkw/AAjnXWlUf8oHQvfI9IHHfCCcJ7nxtccHjp1ZEj7wxp1lygZWzibL8ljAwtkp0sTBQCIY02MD4Xnh1Pzc7wQkHMyEDUR5TCPG3YBn9PdwYEsAim3DJyvmGwaKPVcdQ4Ai+9YRWAhdvlorGQi0h769gJUJbM4jQUBLtPpr3gqkckR4gYVCdY4XcEDzBBXy9wL2aNpKPusqXkDX+VqfN17AhGaRRC8gNRCV4CChH9B+y7GSMz5wiybVYg8R2IBOI+JDrR/QbUS0c3kCD2hQLWnOBba0GVTRE2idzmvJ2MC2KpZcYIu7rI7e3kD7lSBuszewzQMfsYH0tWojCz4w+ugC1kbkAKE3a0i95rCAxmU3kLpXeMAosQeXwoBRdFxYgKNAYBT/oIFlKDCK9sl2L8KBdNiPjCH6AqOkMoCTTsAo/q4Dd7oBzZ1wtytQX346A/X4WnegthVygJZPA3+g/IeAxCm97w2UcZq0DRgzgXhrpB4toPniGocUcEIAK6g7IQpxAanLbDS25w6g3NWVq736R909I+DaJoUvkLqIHfOAqk5//5YtwPUwQHatE7cp4KQFmBNmwEB106TxG4HKKZHWAPsUkJh8sHm1xVGtaztJz0kNFPnRfFYBh0hd/IACykP/jgY0IjbozDiJoG4tC1jKXAMa/dwnVLUVY516g7I0QL1bkLlyqtp1vQsaqFUxJiNY1BK0LmRkALEV30JN5QYUMFl2VQ83AixJ0N9O0DKgKo8GYgaSwORVGVQsBF/KWZ/wlKrFGQVsAhfvUMugb4a7edWRB+qnCRTp9d2HD/eXAov1tYg4v63Pvbs0kBT08qeyZJr7A/FbQ5ujCTJpBjME39lYvDj09oY4vQHRZxAdUMCbknl6A0XrWzbpcxlPMK1ej8GjHc0LI9ch7aNQ4U7iJpraNLcLoiH0y2HDQkZES2bTx3P6YA10nsDSHQ939++Wl7Lp6dXDLVlsXfrxUhafXjvzrWQ4fD8ctuSR0OHQL+OLvIhb/gB0T7f1kkNGkAAAAABJRU5ErkJggg==",
+	"lig/swash" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgBAMAAAB54XoeAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAACHRSTlMA/xnfX4m3OYOmLMYAAATgSURBVHic7ZpLb9NAFIWN46RbTErYOqCKLUYUtg6oZYt5rR2KxBZLiN9P4kdm7nPuTJGQUM6uzvVxfHK/ueOkWXbWWWed9T/o+c2Xz+//nl1xVx61eavUXJUnVSE/V/tdrFm+doY/A35LV1q+EmqKeueKPuh+ee0Zlm8Ev8u9q+l0w10J9IP1K394JS9Uv6JE+sj5bVZexcOYN1iW6wZVXB0yebn1Kp5ofhfYjzjeDh+sF2F5qRk+o4bAsWgHi9x//bFmuGcMy/Wc48XteKDxW6vcKH7kI5l0/b7Knv76Ws/3uAWvKoYLwRDqQ9aCvyvZcPqMN4c39PymFvweZzk80MiGo8cEXP6JN2wAnaXGXuH7HfSb8zt0CYxQYW813pET47g+LC4tPCSzt51OcHpHDN/g9aMsH4mGxyu/pId8baoMR6iwV48n+MpRqzcZbS4RlZwLuAD39+14CC8gIioF+9rSc3w13wjQWjJckgQHXZ0MrufrIkmGC4GiYsrx+6kMSRpTW2lpy2/u6vX1PFXJGiyy14cG2CgcoczeTkzXF7PEdUJpq06HWcwSJ42pvemOaYQie3cWPyZCcUxJGw8gZi6K7HUWwxVjKLEX2kYN6hlDU3dIGqi5Q45Vut8YIV7JTffGa4hwg5dYU7/xGiK8xLR06YZDhC/QYA5sETWNETa4u/UtoqbV1CVo0pgWAVbDiL8kw1DdIqpqp8TQCqFuETXlU4R4M6JtEVUtpwjJophquJ3vDy8RVaLhHCHZjTRpfmOER84wKonsLU+3h1Hp0gxPEWYZMkxkb4hwnEgIFXmLqKp2cbXQMI09F+FfQmXhndpDwzRUdl5aD6Bh2piqvQbBqKT4jc08zSOMSsqYWvhhYVSaBMOd3x94R5LCnh8hQaWTz5MEIiSoJIwpECFBJYE9ECFBJWFM7WFUPTSMZ+8CtRtCJZ69ecTPQmMqnr0eJYVRqWINx12S+xujEsvevEtCB5xiUcER3hsVHCF5XokdUzjC+7J32iU5IVQixxSNEKMSyZ434sEhp0j22uM58AsJhEoce26X5HSvMeWPeHjMqWLPFMRESFBpYgyHCNGijHd0MexxERJUughDLkKCSgx7z9hGa6FhzJjiIiSoxLBXsxmlo4JG/Kx0VBZ8PUIlYkyhET8Lo2I35CMkqJjHlBAhQaWxGtp+cYhgj/k6jlVnNayNhtYxJf1oQ2RlzxqheUz1VkMre+zvXpyM7HHfaPIysrdSLl5Dx8pk2B9LhbxRGjb26C7JqYWGJlQutFLEUGcxXGnpoDXbNKaGCKUOQ48WJvaGCKX5g9Zsy5jK1XDQmm1hb6n2A1o3LOwNsYsIIIos7LX6rUBDw5jKA+1QQ8MqaDhGKBPA/Cypaxu4cAsNw+y1gax7aNiF/PJQv8aytwxdF82b4JhahKKOZW+IUFvZEXtBVOpQFWIvhEoRDAbtl0JjahFuLmgYYm9c4dXREzem6nAuLTRs1OLC0ApoTOnsjRHq3d9Dw85w9UatiRpTtaETYtgbIww0P2JPHVOr8DXj2OsNMUeNqb2lVY3skU0m8z57XKO5kp/NK1rTiobMfeOrcx9eLRoy1XifztCiPL3QxiARMp8M988E4uVxMdddW9ZrEF0helTB/VeP8kTZBCOkFeoTZcWUn3XWP9EfdHY65qyfm5YAAAAASUVORK5CYII=",
+	"lig/styl_alt" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgBAMAAAB54XoeAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAACHRSTlMA/+OIXRi4N4tkLuYAAAQESURBVHic7Zg7e9owFIZJwLDWdkpXyIWudclldS4Nq0nTdrVpQtaQNO3fL7Zk69xkG8iob8gTi0+vdHSOjFCn4+Tk5OTk5OTk5OTk5OTk5OTk5OTUSt6/m+n09Oat2Tk4X4yDyUXxv7+W6Lle+FrB71k971YbjxI78HXsQ03imkC+VrZjGxB4ylleWIERsD3KwF5GeWs9WXhXaNxnCXg/Fni+/0XkdbHpQAB+l3n56FwDao4Z8K+MK0bneqGmkAHBh5PlEk2ABz2Qh5aBD0WIsH74FFftgcE3/dwDxLhpBWuAZ1VD3xg/EeBd+cFwlnivWR0wBC1RZQwSDCwRx0X7IKoBpqAFTBGnpefj0b3ICkRT8Wwxz/W8qwIdZDYgzieIWYr40bR0bcAUNa3MFGPQrItwCK0vFiDeZfsGOOLNJ9DqZSIQDYpeAHAtLn1h8K4IJFuiZ4BwqExYbuF9mDd8sAJ9k369hGkbIDHBV0CMg6MRW4Ax9oBCBGPtFc9hh0gEkh0GgWY1VE4+NgIFQaDZK5m4hBsDTVLlJWwFhG/xas1UpgLRuwmwKsSunJONgdWU+mRJdwaqqhntDKzMcznJ2wNVGfJvVjvw1/XyUPhWKz+O5KqxAu8XnCUAE9bRAry14Iw5QylqArLzoQU45F1F4JWdV5nHGwC7NTwM5BtFAnrSAZYB/fbAuzreNkA4weH0ZvaW7AaEK6hOQeJOKR6EQy0HrkznEJgosH1ShAPmTkDpmLATEBxk0jpg1hZ4afom0CQC2+wUUzQhMlFglD+0eDmIx1UJeOnTrjIQnGNGLYDN70OQ5LQWOC+e4kageOSXgPvEYwOCqomRiQL7JAobcK8tUK0NO3zVAZ+RiQJV9vjbgQLnbYGqvnhlbw3UO4DVzdYh244ObZLiiUAVC/rZIwGlspGBqm4aD+0AWEUzEIH61wtdRAoEOyUlXQlQv9rTDlKPAsFeHglt0BwVz6QSV3TWoHO1C/oyUGUFn+i8MW0C4YWkJwXqsVGe1SEhBi0gAdXrOJOBajboOkHfu6DiBH1jNmm84Prr5zNrQZMG09HtKxuwXNtqQj91A0pUBGJ+5hOEQB2zH+hQXquOMM1wPmHCbyfh4OVXbnCR5De76v/8TwpM+7D3cHpOfwhAoKmxYFke8h+KfolkkgWBnYx9HPxQsZnLao95/KEV2mfeg3IQMStaJ/ZZMnNcJsF45iyKhLYYMymBvGD6TZ514dqB5BI2LzRdTMBDwtB30xYgdp+ZMYCFrPRjpxYIf4Q8gRbroOX9vg3Y8c7LUMpr1mIvQAu8xw2TJuD6l+v5oR9MTk0xe7cL7DGX7Uf8vLaVemojBafvg8v1Zzqdzt5pek5OTk5Y/wFHsAO+a32wwQAAAABJRU5ErkJggg==",
+	"lig/titling" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgBAMAAAB54XoeAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAACHRSTlMA/wK+JeeIV/r6QNIAAAGiSURBVHic7drNTsJAFAXgCS2wrmXqtrwBxOh6Fj4AKLiGGMIWTOT5VQh2bjtnOp2owXDOjsu9X/+mq45SDMMwjEgmopfPd52ybAG7p6x5PYKXB/74Uxbgw9aodFP9bl7Fy2fD4XUeBuZvp/E1BrU5FuyDYrA4/5VgcHGeem8Hc3OupBjcfY9t2kBd9aopAnXVk05bwIVV2iOwsJoS2VMHtbFKYwSO7MGpF7RPUPUROLO7Ei+4c7Q2wYndlfrAQpQGCFyJtrUHFFeshmFg3wOKK8agq80J6jIMNKKth0F5C6tXxQ+ebqITHMlSKLiH4EyWIFgbHUNwIkuh4Ndj1qqe5nKAYH04gaBcDsHgAIImDhy6wGNz6ajFgsr1pALB9OLBnhN0BN3D5iIODEGCBAkSJEiQIEGCBAkSJEiQIEGCBAkSJEjwokD0ceEfgOX1naG5PnDnnYoAV5EefPUm3jEc+Dl45h2LAG8iQfjR/zYShBsn8kgQ7hWJXTd7CD5FeekcgmIXTXCq/UgNMCs6i4+H+8wDZvm2C5kFhiDB3wQZ5o/zAUAS7Ik9nsv5AAAAAElFTkSuQmCC",
+	"lig/ordinals" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgBAMAAAB54XoeAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAACHRSTlMA/xFU47WIK3hxmYoAAANeSURBVHic7dlLU9swEABg1Q7x2cWBqxlaek0KgWtCoFzrhnBOINBrmDL8/volaVda2bJRpjMd7YVYrL5IWsV2HMZ8+Ph/Yurai117bsHccwoWnkuw9ByClecOrD13YOxBD+4djLY2GIxm7zTDCX+eV6unXX9QOS2d3pddkmXaDwy3OGEqOh2lfcD3OU74CnotuoPRVkkI57DbuCuYV0NJyFC3w47gVEs4UPrtuoDhVk/YlAfLKxacl2Od8eSWqRbxPtffMSxf31XLOxdztgEjODyROJDzZGySvzyyBWU1UOIGdir0xBKcxmpU7dUqpNXBEAKNYLjVvCoxql6PmTxKLUBcDZg4rF6vO4FqNWBivQuvq8zAaspaNQhwREzLBOrVIEA+53aQqgZMrNdQ7r4WkKwGBca/7EAzh7dNvp9/uwGZnIIq9gQ3suHRCTiQDcnYBRiClmTXAUweXjIKhHOW58JW8PaK1edPDRzCtrUdWHJ5vFIgGuLIBrwV+yEkQdT6sxVMluCQuKbkcUEPkQZH3+HhhgTR2q6bwR9oI+BFlM3wXkQWmgSVGNAgnLS4RlmBBwYwAmshPi424NAAsigTzbMuYGgCWSjE4y5gZATlGO1vRSiw+JtW/+PLIXZiL7DYgXxn1YWxvRUpI6BAXtaDHiBTwWLh1srweS7//OwoyAQW05zxf2Z4hBxc64wZnMRgn0wwmNV5113Akxhc419xlfmnh7gHMINFIcSV5KRsFvtwwhObFlEFy83HT6oV+BkPOEYn3VYwgmN6xTX4xBOLOb/f2YHlyvM5l4uWpDxXnpqWl/fgtNYMlgtVf6nAS6hcgeKxHVgOo7pleMMzxh8rU2k0sBpWfusVTMV68UBXoEPS00G5OfSJfQHtiWHv6CD+cruAyeBqmKwJjAbZGRCXOFu8WfKoSWaQnWW8m3YTW18YRnSFTSALLlfzOFk9EMsUTG9uVk+p0aPBj4QHPehBD3rQgx70oAc96EEPetCDHtQCPYpJHYDRXsHGR6GWgR5nmR912MfQNYh+XGh6zmgb6OePmQNwAsHj9vzWyCBI/UjdMZRnlh/fN28YbHzibRPKL4/g+W3PuIiVWLT3aYhA87QHkB3i2/lzpnt5pV/Ou5eGgtTwoAf3Dfrw8Q/jL1G9D21ZbrITAAAAAElFTkSuQmCC",
+	"lig/fractions" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgBAMAAAB54XoeAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAACHRSTlMA/+0Ow1aSL9RUaIcAAARISURBVHic7ZlPT9wwEMWjbrOcsyxwZakoV1qtegbRD0CoRK+hhZ5hW7Vfv90kY8fOjGeeE6kXfCLB+fnFf94+TYrCt2XVt2KetrieGbit5gUebGYG3lXzAstqZuDDzMBtNS/Qb5kMIO3f48G9XTUBWPePNf5W2W6ZVR6wZAR2Y1zkAUngjb/VTcL6MgtY9gdifenvdVvme5EF3I0FFjQFOcADRmALWt3mATmBLeiiyAKSwNVQYEGKM4Af+0cugrvtimQB6YStniPgEYFB4JYVWLQrkgMUBBY0AAwkgefRfdpDKNB51G30j4aUgkDyrSOpAwp8EATmAjljnQQkgc1MQM5YJwFrVSAGJIGBb00BUtK4SfRBgKyxTgGyxjoBaBKIAEngu2QvO3BBzv+c7GYHCsaaDZSMNRtoFGgGOoGib4FAEigaKwpUjRUEqs6PAnVjxYC684PA2izQBjQ4PwYkgUnfAoBcpJ4ENBkrALQZKwCEBBqAfKSeAOQjdT7QaqxmoNVYrUBUoAqUInUuUIzUuUC7sRqBZuc3AgFjtQHtzm8DIsZqAtaRwMX941l74+zzj6evODCK1It7X8zbt/fsXk8Bw0j9O6hEtQN9wYCBsZbfYty/tmrGTyWAgbFuGB5r4jIwdH6Wx7m4DAwjtQAcm5AIjCK1ABwneBEYGStN2tPPxZ/H1CxKwNhYu6vz7vFPgyW6MgJj5w/lDKqt8bEUgKNI3V75NR3Ug+NyCw8cRero2bfiOwvAkbG2bzx4Az+LkZnzwLHzx4+++HW2AMfGur86ZIZ0E1EJLeg9WMH95ekAeOAfaXRgPRLY9r8avoQ3s1MVyDl/xPeDVtWJCqS+cRE4+C194x450oBspB4B/U481oBiETg4E/5jzFoB8pE6AVwpQD5S7+8EIywioNjMkdoKNEfqjQ1oT6wOuE52s0dqB0wmHyBSuzlMhlF7pParfGIQaEisfh+eJnoBkdobYpPoBURqf5YT041E6g+WXYNE6tqwyFCkdo59KPepAYF+keXeliq1a25NEiZiqVK79qJPIVarcOHmSuwC1Srcz7L8xphAN4WyK9mq1NRoQ8iuZKxSUyMzlJ0Gq1U4ZxAPPViroPmR9wxYTFFt01yl7lppFmisVezU+QFrFdfa/IDFlKVZYGMD1toZBYsppXpGa0zgTusNFlN6F0nMNwm01Vh7gYkdC1Wp3fskjhRWBO5/KBJbBjNWep/E6FkCE6ODVepSHR2sUj9oGww01qV6AjBj7YdP7GlQ4K+u93BP768ZgbYqdb+AwduEQLBKze3pEIgZ65Kb7hAIOX//OtGeDoCYsW7ZPR0AIefvV4QrddHfmLHe8YMPgTUicFD4GbVIIJhYZSAUqcWSggeCxqoDQWNVgaBAHYhFah0IRmodiH7+04Dw5z8NCAtUgGCk1oFgpNaB+Oe/NBD/PqkAMz7/Gc7ya3tt/7f9BfaHO8d34whiAAAAAElFTkSuQmCC",
 	"lrs/bin" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4AgMAAABECt5BAAAAAXNSR0IB2cksfwAAAAxQTFRFAAAAAAAAAAAAAAAANek3lgAAAAR0Uk5T/gB8KGMVmQ4AAAJFSURBVHicpdexTuNAEAbgyVopHOQyj+DmELrKvR+BgiUUEfgRKNEVwS+RPiUCIaqUSHkJ95SIHgldcbnd2fHasXc8wUyXfMnu2P5t74L2dfOxAVOzp8/mO/D4AL5Oqy7/gXap10N+h049t7mntSPf9RVgW/N1SEFVxCV9ftzv9f3eHZ6pxLEbelY3q/Vq44cHvcA/v+h2/UWOLV/Zcbf6sFboa8M7o5+6W9dudljUx9Ap21GkYela7NebHR1uAaog25ZTyG2DwTLDJ1BCxrDpKsL2mSpAATe1qSUePMuXdG74yU1xrSGXzFnBwZVhxbemwFyRlOHCHHdOsQlOPbEMJ0F+s1zY5s8Caq9o7Bh+9xRvm9heUFvNbeXmdTdGUjOol+YHNx91luG8Cf6vp72pf48b/80UroK3yHGcwvIHnMHFEM8lvhzitcSLIa5A/4DN/V2OZuWeDlxFMuc8T2QueI5lvuXZPNf0+Wie0jOVqVTmgSxmMg9kcW54IGwC27fBQBYFruyLimd9BJecqmN4x3GEnI/kCXIxkvENzGdR4ASZzeIUmQ2bwCkyGzaBM2Q2iwLPkdksCrxGZrPomA1bNcz6YEH2TVbEu1EcEeejeEJchDk+jpks0kKUy6LAU2ImiwKnxEwWBc6ImSzOiZmwCbwmZrIocEXMZFFgXXMZUuV5F+LIc/CCJ56DZzXzHJrcLW7Bryo7ddbiRe/vtLSl/Vhv17TVbe4OX69r/V7wq61+VetZr/z8qtlcNWz2URuLs/bm6j+BMbUibx6xWgAAAABJRU5ErkJggg==",
 	"lrs/newlayer" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4AgMAAABECt5BAAAADFBMVEUAAAAAAAAAAAAAAAA16TeWAAAAA3RSTlMAgH8BTzA4AAAApUlEQVRIx+3UoRHDMBAFUQupDJWalJoygnJBmQ1Yfeyx77ObB5bdUXFX5mO75ubm5ubm8/P/7sOPqtfvFF5V78Cz6hN4VNVzz8SViSsTVyauTFyZuDJxZeLKxJWJKxNXJq5MXJm4MnFl4srElYkrE1cmrkxcmbgycWfiysSViSsTdyauTFyZuDJxZeLCxDOvzDPz2DBxJm9wZZ6ZhzPxzCvzFM7xL3aB/p8IYvJLAAAAAElFTkSuQmCC",
 	"lrs/folder" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4AgMAAABECt5BAAAAAXNSR0IB2cksfwAAAAxQTFRFAAAAAAAAAAAAAAAANek3lgAAAAR0Uk5T/wAZezFBYccAAACiSURBVHic7dahEcJAFIThnbuJOJEyUkIEjiZuECDwCCghTaSfa4ISTkAHOHDc20xWIZjM++1nVi6yDM5b4wu+PZY8NRxn5gPaBuaT4cR8NhyY94Yj82QYtA3F8p2YGjR3mpPmoJmmL7hqTprx1Nz00hw1o2oeNfeag+ao2fM8z/M2XVEY+TPZAm6Ke7pz1Iij4opc1vVzLfJ1nXf/faGdf85vsX+c5iQpMJEAAAAASUVORK5CYII=",
@@ -8092,7 +8100,7 @@ var LNG = {
 		}
 	],
 	"tables": [
-		"[File;Edit;Image;Layer;Folder;Select;Filter;View::noun (Top Menu);Window;Language;Log In;Log Out;Create translation::Click it to get to www.Photopea.com/translate;[Account;Terms of Service;Back;About::\"About a program\" - the orange button at the top;Report a bug;Learn];More;Theme;Use WebGL;[Photopea: advanced image editor::The header at the top of the page;Free online editor supporting PSD, XCF, Sketch, XD and CDR formats.::Will be at the top of the page;Create a new image or open existing files from your computer. Save your work as PSD (File - Save as PSD) or as JPG / PNG / SVG (File - Export as).::Will be at the top of the page;Suggest new features at our <GitHub> or <Facebook>. Our goal is to create <the most advanced and affordable photo editor>.::Parts between < and > will become links.;Sponsor links open in a new window.;This feature is not available.;Install Photopea]];[Open::verb;Publish online;Save::verb;Save as PSD;Print::Press to print on a printer;Open from URL;Open From Computer;Connect With Google Drive;Export as;Export Layers;Script;Open & Place::Open a document and insert it into a current document;[Close;OK::if you keep it empty, \"OK\" will be used;Reset::if you keep it empty, \"Reset\" will be used];Local Storage;File Info;Preset Manager;[Artboard;Artboards;New Artboard;Artboard from Layers];Automate;Share];[Step Forward::In history of changes;Step Backward::In history of changes;Clear::Verb, press to clear the selected area;Fill::Verb, press to fill the selected area;Transform::Transform the image;Rotate;Flip VAR0::VAR0 will be replaced with Horizontally/Vertically;Scale VAR0::VAR0 will be replaced with Horizontally/Vertically;Undo / Redo;Perspective;[Auto-Blend::Auto-Blend layers together;Auto-Align::Auto-Align layers against each other];Fade;Apply Image;Defringe;Variables];Adjustments;[Brightness/Contrast;Levels::Levels adjustment;Curves::Curves adjustment;Exposure;Vibrance;Hue/Saturation;Color Balance;Black & White;Photo Filter;Channel Mixer;Color Lookup;Invert;Posterize;Threshold;Gradient Map;Selective Color;[Auto Tone;Auto Contrast;Auto Color];Replace Color;Match Color];[Cut;Copy;Paste::like \"insert\", not like \"toothpaste\";New;Delete;Enable;Disable;Copy Merged::Copy not from a layer, but from all layers (all merged together);Apply::Apply Mask - \"combine\" it with a layer;Again::Repeat the same aciton one more time;Update::A verb];[Duplicate Layer;New Adjustment Layer;Raster Mask;Vector Mask;Add (Reveal All)::Add a mask;[Add (Hide All)::Add a mask;Reveal Selection;Hide Selection;From Transparency];[Clipping Mask;Quick Mask Mode];[Convert to Smart Object;Smart Object];Rasterize::Convert Text layer/vector layer to pixels;Group Layers::Put selected layers into a new group;Merge Down::Merge a layer with one below it;Merge Up::Merge a layer with one above it;[Merge Layers::Merge selected layers;Flatten Image::Merge all layers in a document into one];New Layer;Enable Raster Mask;Disable Raster Mask;Enable Vector Mask;Disable Vector Mask;Enable Clipping Mask;Disable Clipping Mask;New Folder;Add Raster Mask;Delete Raster Mask;Add Vector Mask;Delete Vector Mask;Link Raster Mask;Unlink Raster Mask;Link Vector Mask;Unlink Vector Mask;Enable Layer Effects;[Disable Layer Effects;Scale Effects];Delete Layer;Layer Opacity Change;Blending Change;Rasterize Layer Style;Layer Order::Name of the step, when reordering layers;[Creating Smart Object;Updating Smart Object;Placing Smart Object;Source (Smart Object);Stack Mode::the mode of combining (stacking) multiple images into one];Name Change;Color Change;Edit Adjustment Layer;Convert to Shape;Enable Filter Mask;Disable Filter Mask;Enable Smart Filters;Disable Smart Filters;Add Filter Mask;Delete Filter Mask;Clear Smart Filters;[[Color Fill;Gradient Fill;Pattern Fill;Content Aware];New Fill Layer;Modify Fill Layer];[Layer Via Copy;Layer Via Cut];Filter Mask;Delete Layer Style;Move Smart Filter;Delete Smart Filter;[Link Layers;Unlink Layers];Arrange::Arrange layers;[Bring to Front;Bring Forward;Send Backward;Send to Back];[This layer is Locked.;Lock Change;Lock::noun - a lock on a layer];Animation];[All::As in Select - All;Deselect;Inverse;Modify;Expand::Expand Selection;Contract;Feather::Feather (blur) a Selection;Move Selection;Color Range;Border::The border of a Selection;Transform Selection;Refine Edge::A tool for improving the edge of a selection;Heal Selection;Magic Cut];[Zoom In;Zoom Out;Guides::Vertical and horizontal lines over the image, to help us be more precise;Rulers;Grid;Snap::When moving objects, they will \"stick\" to other objects, guides, etc.;Snap To;[Document Bounds;All Documents];Pixel Grid;Paths::Elements of vector graphics;Snap to Pixels;[Slices;Slice Options;Clear Slices;Slices from Guides];Show::A verb: to show.;Extras::Visual elements, that are not printed (guides, grid, selections ...);Pattern Preview];[History::History of steps;Layers;Properties;Brush::A brush tool;Character::= a Letter (like a, b, c, ...);Paragraph;Info;Layer Comps::Compositions of layers;Swatches::Gallery of colors;Actions;Histogram::Usually the same in other languages;Navigator;Tool Presets;Glyphs;Notes];[Brush Tool;Clone Tool;Crop Tool;Eraser Tool;Ellipse Select;Eyedropper::A tool to pick color from the image;Gradient Tool;Hand Tool::To move (pan) across the image area;Type Tool;Lasso Select;Magnetic Lasso Select;Move Tool;Magic Wand;Paint Bucket Tool;Polygonal Lasso Select;Rectangle Select;Free Transform;Zoom Tool;Blur Tool;Sharpen Tool;Smudge Tool;Dodge Tool::Make Brighter;Burn Tool::Make Darker;Sponge Tool::Desaturate;Spot Healing Brush Tool;Healing Brush Tool;Patch Tool::Cut from one place and put to another place;Path Select::a tool to select / move paths;Direct Select::a tool to select / move knots of paths;Pen;Free Pen::Draw freely with this pen;Custom Shape;Rectangle;Ellipse;Parametric Shape;Line;Ruler::A ruler tool to measure distances;Quick Selection;Pencil Tool;Perspective Crop;Slice Tool;Slice Select Tool;Color Replacement;Red Eye Tool;Object Selection;Background Eraser;Puppet Warp;Rotate View;Content-Aware Scale;Content-Aware Move Tool;Artboard Tool;Curvature Pen;Magic Eraser;Color Sampler];[Take a picture::Press the button to take a picture;Color Picker;Contour Editor;Canvas Size;Duplicate Into ...;Gradient Editor;Layer Style;New Project;Save for web;Warp;Image Size;[Vectorize Bitmap::Convert raster pixels into vector paths;Reduce Colors::Reduce the number of colors in the image (Edit - Reduce Colors)];[Trim::cut away an empty area around the object;Crop::(verb) Crop the image;Reveal All];Keyboard Shortcuts;Add Guides;[Clear Guides;Guides from Layer;Lock Guides]];[Opacity;Effects;Brightness;[Contrast;Use Legacy];Channel::Color Channel;Exposure;Offset;Gamma correction;Hue;Saturation;Lightness;Colorize;Range;Vibrance;[Size;Interpolation;Nearest Neighbor;Bilinear;Bicubic Sharper];Angle;Roundness;Hardness;Spacing;[Blend Mode;Blend If::Specifies a tonal range for blending];[Sample Size;Sampling Ring];Contour;Style;[Reverse;Relative::When ON, you only write a number, which will be added to the original value;Anchor::To which side the object should be anchored;Dither::Enable dithering];Tolerance;[Contiguous;Anti-alias;Sample All Layers;Resample;Continuous::adapt continuously, while moving;Once::one time];Fill::Noun, the content (filling) of something.;Use global angle;Distance;Spread::Spread the effected area;Noise::add random image noise;Knock out drop shadow::No drop shadow behind the object;Technique;Direction;Depth;Soften;Mode::One of possible modes of the effect;Gradient::from one color to another;Scale::scale the content - 10% or even 200%;Align with layer;Position::Position of the effect;Width;Height;Destination;Type;Foreground;Background;Custom::Color: not foreground or background, but a custom color;Name::Name of something;Create;Format;Keep Aspect Ratio;[Quality;Pages];Duplicate;Move::When you move layers, the Move step will be added to History;Smart Filters;Radius;Amount::Strength of the effect (0 ... 100);Distribution;[Uniform::uniform random distribution;Gaussian];Monochromatic;Cell Size::Mosaic filter creates \"cells\";Pattern;Flow::A brush has the opacity and the flow;Strength;Protect Detail;Fill Type;Texture;Jitter::Add Noise in Outer Glow;Edge::The inner glow is either from the center, or from the Edge;Source;Target;Channels;Mask::A noun, e.g. a vector mask or a raster mask ;Density;Aligned;[Path;Shape;Pixels;Inches;Centimeters;Millimeters;Percent;Current Path];Shapes;Sides;Preferences;[Length;Ratio;Any::Any ratio of a rectangle;Grid Type;Isometric;Grid Gap;Ruler Units];Reduce noise;Colors;Distances;Rate::Liquify filter: Rate of modification;Auto-Select::Move tool option: click the object to select its layer;Find;Define New;[Photo;Screen::computer screen;Mobile::Mobile device;Ads::Advertisement;Print::A noun];[Free::Not Restricted / Not Limited;Fixed Ratio;Fixed Size];Help;[Live Shape::Shape, that can be reconstructed from parameters at any time;Edit Live Shape;Same Radii::all radiuses of a rectangle should be the same];Fuzziness;[Polygon;Star;Spiral;Square;Arrow];[Corner Radius;Inner Radius;Simplify];[Sharp;Crisp;Strong;Smooth]];[Color;[None::No Color;Red;Orange;Yellow;Green;Blue;Purple;Gray;White;Transparent;Black;Cyan::A color;Magenta::A color;Neutral::Apply to neutral colors];Total;Absolute;Preserve Luminosity;Preserve Transparency;Profile::Color Profile];[Drop Shadow;Inner Shadow;Outer Glow;Inner Glow;Bevel and Emboss;Color Overlay;Gradient Overlay;Pattern Overlay;Satin;Stroke::Thick line around an object;Blending Options;Select Pixels];[Tip Shape;Tip Dynamics;Scatter::dont put brush exactly, but randomly around the target spot;Color Dynamics;[Size Jitter::change the size randomly;Minimal Diameter;Angle Jitter::change the angle randomly;Roundness Jitter::change the roundness randomly;Minimal Roundness];[Position Jitter;Count::The number of brush tips;Count Jitter];[Foreground/Background Jitter;Hue Jitter;Saturation Jitter;Brightness Jitter];[Select clone source by holding Alt (or K) and clicking on the image.;Mark Foreground with White, Background with Black, and the unknown area with Gray.;Layer is not editable.;Text Layer must be rasterized first;Smart Object must be rasterized first;Select multiple layers;Straighten Layer::Will rotate the layer, so that the horizon is horizontal;Open a document first.;Close the current window first.;Current Tool Only::Tool Presets only for the current tool;Delete Cropped Pixels];[Record::To record actions;New Action Set;New Action];[Stylus Pressure controls Opacity;Stylus Pressure controls Size];[Normal::One of Blend Modes (when empty, English version will be used);Dissolve::One of Blend Modes (when empty, English version will be used);Darken::...;Multiply::...;Color Burn::...;Linear Burn::...;Darker Color::...;Lighten;Screen;Color Dodge;Linear Dodge;Lighter Color;Overlay;Soft Light;Hard Light;Vivid Light;Linear Light;Pin Light;Hard Mix;Difference;Exclusion;Subtract;Divide;Hue;Saturation;Color;Luminosity;Pass Through::Blend Mode only for Folders;Add::Mathematically]];[Leading::Text style - vertical distance between lines;Tracking::Text style - horizontal spacing between characters;Baseline shift::Move the bottom line of the text;[Convert to Point Text;Convert to Paragraph Text]];[All Layers;Current Layer;Selection;Current & Below::Current layers and all layers below it];[Replace::The new thing replaces the old one;Unite;Subtract;Intersect;Exclude;Merge];[[Linear;Radial;Angle;Reflected;Diamond;Shape Burst];[Softer;Precise];[Outer Bevel;Inner Bevel;Emboss;Pillow Emboss;Stroke Emboss;Stroke Width::The thickness of the stroke line (contour)];[Smooth::A verb: to smooth something;Chisel Hard;Chisel Soft;Smoothness];[Up;Down];[Outside;Center;Inside;From Center::Draw an object from the center];[Shadows;Midtones;Highlights];[Desaturate;Saturate];[Small;Medium;Large];[Caps;Corners;Dashes]];[Choose the object under the cursor;Transform controls;Pixel to Pixel::Zoom the image to 100% (1 image pixel = 1 screen pixel);Fit The Area;[Align Left Edges;Center Horizontally;Align Right Edges;Align Top Edges;Center Vertically;Align Bottom Edges;Equal Gaps::Equal spacing between objects]];[Place into::Place the new photo into:;Current Project;New Project;Resolution;Added into the current project.;A new project was created.;Access to the camera was denied.];[Orientation::Vertical or horizontal;Bend::Text warping: bend the text to a wave, etc.;Horizontal Distortion;Vertical Distortion;[Horizontal;Vertical;Horizontally;Vertically];[None::No Warp;Arc;Arc Lower;Arc Upper;Arch;Bulge;Shell Lower;Shell Upper;Flag;Wave;Fish;Rise;Fish Eye;Inflate;Squeeze;Twist;Custom];[Font;is not available;Will be rendered using;There is unsaved work in::File name will be added after this;Do you really want to close it?];[Swap Colors;Default: White and Black]];[loaded::File was loaded;added::Font was added;Move Guide;Delete Guide;Add Guide;Loading;Load VAR0::Keep VAR0 in a phrase, it will be replaced with a Noun when used];[Filter Gallery;[[Liquify::A filter;[Smudge::Draw over image to spread colors along your stroke;Reconstruct::Recover to original state;Smoothen::Make the effect more smooth;Twirl::Rotate in a spiral;Shrink::Make smaller;Blow::Make bigger;Push Left::ush colors to the left along the stroke;Freeze;Unfreeze]];[Lens Correction]];Blur::A noun;[Average::Average filter - fills the image with an average color;Blur:: A verb;Blur More;Box Blur;Gaussian Blur;Lens Blur;Motion Blur;Radial Blur;Shape Blur;Smart Blur;Surface Blur];Distort;[Displace::Filter: move parts of image according to the brightness from another image;Pinch::Blow or shring around the center;Polar Coordinates;Ripple::Add tiny waves to the image;Shear;Spherize;Wave;ZigZag;Kaleidoscope];Noise::Filetr => Noise;[Add Noise;Despeckle;Dust & Scratches;Median;Reduce Noise];Pixelate;[Color Halftone;Crystallize;Facet;Fragment;Mezzotint;Mosaic;Pointillize];Render;[Clouds;Difference Clouds;Lens Flare;Flame;Fibers];Sharpen;[Sharpen;Sharpen Edges;Sharpen More;Smart Sharpen;Unsharp Mask];Stylize;[Diffuse;Emboss;Extrude;Find Edges;Oil Paint;Solarize;Trace Contour;Wind];Other;[Custom::A Custom kernel of the convolution;High Pass;Maximum;Minimum;Offset::Filter: shift the image horizontally and vertically;Repeat::Filter: Repeat the image many times;Color to Alpha::this filter makes a specific color transparent;Particles;Normal Map];[Undefined Area;Set to Transparent;Repeat Edge Pixels;Wrap Around;Last Filter;Preview];[Artistic;Brush Strokes;Sketch];[Colored Pencil::Following phrases are Filters in the Filter Gallery. Keep them empty to keep the English version in Photopea.;Cutout;Dry Brush;Film Grain;Fresco;Neon Glow;Paint Daubs;Palette Knife;Plastic Wrap;Poster Edges;Rough Pastels;Smudge Stick;Sponge;Underpainting;Watercolor;Accented Edges;Angled Strokes;Crosshatch;Dark Strokes;Ink Outlines;Spatter;Sprayed Strokes;Sumi-e;Diffuse Glow;Glass;Ocean Ripple;Bas Relief;Chalk & Charcoal;Charcoal;Chrome;Conté Crayon;Graphic Pen;Halftone Pattern;Note Paper;Photocopy;Plaster;Reticulation;Stamp;Torn Edges;Water Paper;Glowing Edges;Craquelure;Grain;Mosaic Tiles;Patchwork;Stained Glass;Texturizer::The last filter in the Filter Gallery.]];[Templates;[Font Filter;Keywords;Randomize];[With Symbols;With Photo];[Thumbnails;List]]"
+		"[File;Edit;Image;Layer;Folder;Select;Filter;View::noun (Top Menu);Window;Language;Log In;Log Out;Create translation::Click it to get to www.Photopea.com/translate;[Account;Terms of Service;Back;About::\"About a program\" - the orange button at the top;Report a bug;Learn];More;Theme;Use WebGL;[Photopea: advanced image editor::The header at the top of the page;Free online editor supporting PSD, XCF, Sketch, XD and CDR formats.::Will be at the top of the page;Create a new image or open existing files from your computer. Save your work as PSD (File - Save as PSD) or as JPG / PNG / SVG (File - Export as).::Will be at the top of the page;Suggest new features at our <GitHub> or <Facebook>. Our goal is to create <the most advanced and affordable photo editor>.::Parts between < and > will become links.;Sponsor links open in a new window.;This feature is not available.;Install Photopea]];[Open::verb;Publish online;Save::verb;Save as PSD;Print::Press to print on a printer;Open from URL;Open From Computer;Connect With Google Drive;Export as;Export Layers;Script;Open & Place::Open a document and insert it into a current document;[Close;OK::if you keep it empty, \"OK\" will be used;Reset::if you keep it empty, \"Reset\" will be used];Local Storage;File Info;Preset Manager;[Artboard;Artboards;New Artboard;Artboard from Layers];Automate;Share];[Step Forward::In history of changes;Step Backward::In history of changes;Clear::Verb, press to clear the selected area;Fill::Verb, press to fill the selected area;Transform::Transform the image;Rotate;Flip VAR0::VAR0 will be replaced with Horizontally/Vertically;Scale VAR0::VAR0 will be replaced with Horizontally/Vertically;Undo / Redo;Perspective;[Auto-Blend::Auto-Blend layers together;Auto-Align::Auto-Align layers against each other];Fade;Apply Image;Defringe;Variables];Adjustments;[Brightness/Contrast;Levels::Levels adjustment;Curves::Curves adjustment;Exposure;Vibrance;Hue/Saturation;Color Balance;Black & White;Photo Filter;Channel Mixer;Color Lookup;Invert;Posterize;Threshold;Gradient Map;Selective Color;[Auto Tone;Auto Contrast;Auto Color];Replace Color;Match Color];[Cut;Copy;Paste::like \"insert\", not like \"toothpaste\";New;Delete;Enable;Disable;Copy Merged::Copy not from a layer, but from all layers (all merged together);Apply::Apply Mask - \"combine\" it with a layer;Again::Repeat the same aciton one more time;Update::A verb];[Duplicate Layer;New Adjustment Layer;Raster Mask;Vector Mask;Add (Reveal All)::Add a mask;[Add (Hide All)::Add a mask;Reveal Selection;Hide Selection;From Transparency];[Clipping Mask;Quick Mask Mode];[Convert to Smart Object;Smart Object];Rasterize::Convert Text layer/vector layer to pixels;Group Layers::Put selected layers into a new group;Merge Down::Merge a layer with one below it;Merge Up::Merge a layer with one above it;[Merge Layers::Merge selected layers;Flatten Image::Merge all layers in a document into one];New Layer;Enable Raster Mask;Disable Raster Mask;Enable Vector Mask;Disable Vector Mask;Enable Clipping Mask;Disable Clipping Mask;New Folder;Add Raster Mask;Delete Raster Mask;Add Vector Mask;Delete Vector Mask;Link Raster Mask;Unlink Raster Mask;Link Vector Mask;Unlink Vector Mask;Enable Layer Effects;[Disable Layer Effects;Scale Effects];Delete Layer;Layer Opacity Change;Blending Change;Rasterize Layer Style;Layer Order::Name of the step, when reordering layers;[Creating Smart Object;Updating Smart Object;Placing Smart Object;Source (Smart Object);Stack Mode::the mode of combining (stacking) multiple images into one];Name Change;Color Change;Edit Adjustment Layer;Convert to Shape;Enable Filter Mask;Disable Filter Mask;Enable Smart Filters;Disable Smart Filters;Add Filter Mask;Delete Filter Mask;Clear Smart Filters;[[Color Fill;Gradient Fill;Pattern Fill;Content Aware];New Fill Layer;Modify Fill Layer];[Layer Via Copy;Layer Via Cut];Filter Mask;Delete Layer Style;Move Smart Filter;Delete Smart Filter;[Link Layers;Unlink Layers];Arrange::Arrange layers;[Bring to Front;Bring Forward;Send Backward;Send to Back];[This layer is Locked.;Lock Change;Lock::noun - a lock on a layer];Animation];[All::As in Select - All;Deselect;Inverse;Modify;Expand::Expand Selection;Contract;Feather::Feather (blur) a Selection;Move Selection;Color Range;Border::The border of a Selection;Transform Selection;Refine Edge::A tool for improving the edge of a selection;Heal Selection;Magic Cut];[Zoom In;Zoom Out;Guides::Vertical and horizontal lines over the image, to help us be more precise;Rulers;Grid;Snap::When moving objects, they will \"stick\" to other objects, guides, etc.;Snap To;[Document Bounds;All Documents];Pixel Grid;Paths::Elements of vector graphics;Snap to Pixels;[Slices;Slice Options;Clear Slices;Slices from Guides];Show::A verb: to show.;Extras::Visual elements, that are not printed (guides, grid, selections ...);Pattern Preview];[History::History of steps;Layers;Properties;Brush::A brush tool;Character::= a Letter (like a, b, c, ...);Paragraph;Info;Layer Comps::Compositions of layers;Swatches::Gallery of colors;Actions;Histogram::Usually the same in other languages;Navigator;Tool Presets;Glyphs;Notes];[Brush Tool;Clone Tool;Crop Tool;Eraser Tool;Ellipse Select;Eyedropper::A tool to pick color from the image;Gradient Tool;Hand Tool::To move (pan) across the image area;Type Tool;Lasso Select;Magnetic Lasso Select;Move Tool;Magic Wand;Paint Bucket Tool;Polygonal Lasso Select;Rectangle Select;Free Transform;Zoom Tool;Blur Tool;Sharpen Tool;Smudge Tool;Dodge Tool::Make Brighter;Burn Tool::Make Darker;Sponge Tool::Desaturate;Spot Healing Brush Tool;Healing Brush Tool;Patch Tool::Cut from one place and put to another place;Path Select::a tool to select / move paths;Direct Select::a tool to select / move knots of paths;Pen;Free Pen::Draw freely with this pen;Custom Shape;Rectangle;Ellipse;Parametric Shape;Line;Ruler::A ruler tool to measure distances;Quick Selection;Pencil Tool;Perspective Crop;Slice Tool;Slice Select Tool;Color Replacement;Red Eye Tool;Object Selection;Background Eraser;Puppet Warp;Rotate View;Content-Aware Scale;Content-Aware Move Tool;Artboard Tool;Curvature Pen;Magic Eraser;Color Sampler];[Take a picture::Press the button to take a picture;Color Picker;Contour Editor;Canvas Size;Duplicate Into ...;Gradient Editor;Layer Style;New Project;Save for web;Warp;Image Size;[Vectorize Bitmap::Convert raster pixels into vector paths;Reduce Colors::Reduce the number of colors in the image (Edit - Reduce Colors)];[Trim::cut away an empty area around the object;Crop::(verb) Crop the image;Reveal All];Keyboard Shortcuts;Add Guides;[Clear Guides;Guides from Layer;Lock Guides]];[Opacity;Effects;Brightness;[Contrast;Use Legacy];Channel::Color Channel;Exposure;Offset;Gamma correction;Hue;Saturation;Lightness;Colorize;Range;Vibrance;[Size;Interpolation;Nearest Neighbor;Bilinear;Bicubic Sharper];Angle;Roundness;Hardness;Spacing;[Blend Mode;Blend If::Specifies a tonal range for blending];[Sample Size;Sampling Ring];Contour;Style;[Reverse;Relative::When ON, you only write a number, which will be added to the original value;Anchor::To which side the object should be anchored;Dither::Enable dithering];Tolerance;[Contiguous;Anti-alias;Sample All Layers;Resample;Continuous::adapt continuously, while moving;Once::one time];Fill::Noun, the content (filling) of something.;Use global angle;Distance;Spread::Spread the effected area;Noise::add random image noise;Knock out drop shadow::No drop shadow behind the object;Technique;Direction;Depth;Soften;Mode::One of possible modes of the effect;Gradient::from one color to another;Scale::scale the content - 10% or even 200%;Align with layer;Position::Position of the effect;Width;Height;Destination;Type;Foreground;Background;Custom::Color: not foreground or background, but a custom color;Name::Name of something;Create;Format;Keep Aspect Ratio;[Quality;Pages];Duplicate;Move::When you move layers, the Move step will be added to History;Smart Filters;Radius;Amount::Strength of the effect (0 ... 100);Distribution;[Uniform::uniform random distribution;Gaussian];Monochromatic;Cell Size::Mosaic filter creates \"cells\";Pattern;Flow::A brush has the opacity and the flow;Strength;Protect Detail;Fill Type;Texture;Jitter::Add Noise in Outer Glow;Edge::The inner glow is either from the center, or from the Edge;Source;Target;Channels;Mask::A noun, e.g. a vector mask or a raster mask ;Density;Aligned;[Path;Shape;Pixels;Inches;Centimeters;Millimeters;Percent;Current Path];Shapes;Sides;Preferences;[Length;Ratio;Any::Any ratio of a rectangle;Grid Type;Isometric;Grid Gap;Ruler Units];Reduce noise;Colors;Distances;Rate::Liquify filter: Rate of modification;Auto-Select::Move tool option: click the object to select its layer;Find;Define New;[Photo;Screen::computer screen;Mobile::Mobile device;Ads::Advertisement;Print::A noun];[Free::Not Restricted / Not Limited;Fixed Ratio;Fixed Size];Help;[Live Shape::Shape, that can be reconstructed from parameters at any time;Edit Live Shape;Same Radii::all radiuses of a rectangle should be the same];Fuzziness;[Polygon;Star;Spiral;Square;Arrow];[Corner Radius;Inner Radius;Simplify];[Sharp;Crisp;Strong;Smooth]];[Color;[None::No Color;Red;Orange;Yellow;Green;Blue;Purple;Gray;White;Transparent;Black;Cyan::A color;Magenta::A color;Neutral::Apply to neutral colors];Total;Absolute;Preserve Luminosity;Preserve Transparency;Profile::Color Profile];[Drop Shadow;Inner Shadow;Outer Glow;Inner Glow;Bevel and Emboss;Color Overlay;Gradient Overlay;Pattern Overlay;Satin;Stroke::Thick line around an object;Blending Options;Select Pixels];[Tip Shape;Tip Dynamics;Scatter::dont put brush exactly, but randomly around the target spot;Color Dynamics;[Size Jitter::change the size randomly;Minimal Diameter;Angle Jitter::change the angle randomly;Roundness Jitter::change the roundness randomly;Minimal Roundness];[Position Jitter;Count::The number of brush tips;Count Jitter];[Foreground/Background Jitter;Hue Jitter;Saturation Jitter;Brightness Jitter];[Select clone source by holding Alt (or K) and clicking on the image.;Mark Foreground with White, Background with Black, and the unknown area with Gray.;Layer is not editable.;Text Layer must be rasterized first;Smart Object must be rasterized first;Select multiple layers;Straighten Layer::Will rotate the layer, so that the horizon is horizontal;Open a document first.;Close the current window first.;Current Tool Only::Tool Presets only for the current tool;Delete Cropped Pixels];[Record::To record actions;New Action Set;New Action];[Stylus Pressure controls Opacity;Stylus Pressure controls Size];[Normal::One of Blend Modes (when empty, English version will be used);Dissolve::One of Blend Modes (when empty, English version will be used);Darken::...;Multiply::...;Color Burn::...;Linear Burn::...;Darker Color::...;Lighten;Screen;Color Dodge;Linear Dodge;Lighter Color;Overlay;Soft Light;Hard Light;Vivid Light;Linear Light;Pin Light;Hard Mix;Difference;Exclusion;Subtract;Divide;Hue;Saturation;Color;Luminosity;Pass Through::Blend Mode only for Folders;Add::Mathematically]];[Leading::Text style - vertical distance between lines;Tracking::Text style - horizontal spacing between characters;Baseline shift::Move the bottom line of the text;[Convert to Point Text;Convert to Paragraph Text]];[All Layers;Current Layer;Selection;Current & Below::Current layers and all layers below it];[Replace::The new thing replaces the old one;Unite;Subtract;Intersect;Exclude;Merge];[[Linear;Radial;Angle;Reflected;Diamond;Shape Burst];[Softer;Precise];[Outer Bevel;Inner Bevel;Emboss;Pillow Emboss;Stroke Emboss;Stroke Width::The thickness of the stroke line (contour)];[Smooth::A verb: to smooth something;Chisel Hard;Chisel Soft;Smoothness];[Up;Down];[Outside;Center;Inside;From Center::Draw an object from the center];[Shadows;Midtones;Highlights];[Desaturate;Saturate];[Small;Medium;Large];[Caps;Corners;Dashes]];[Choose the object under the cursor;Transform controls;Pixel to Pixel::Zoom the image to 100% (1 image pixel = 1 screen pixel);Fit The Area;[Align Left Edges;Center Horizontally;Align Right Edges;Align Top Edges;Center Vertically;Align Bottom Edges;Equal Gaps::Equal spacing between objects]];[Place into::Place the new photo into:;Current Project;New Project;Resolution;Added into the current project.;A new project was created.;Access to the camera was denied.];[Orientation::Vertical or horizontal;Bend::Text warping: bend the text to a wave, etc.;Horizontal Distortion;Vertical Distortion;[Horizontal;Vertical;Horizontally;Vertically];[None::No Warp;Arc;Arc Lower;Arc Upper;Arch;Bulge;Shell Lower;Shell Upper;Flag;Wave;Fish;Rise;Fish Eye;Inflate;Squeeze;Twist;Custom];[Font;is not available;Will be rendered using;There is unsaved work in::File name will be added after this;Do you really want to close it?];[Swap Colors;Default: White and Black]];[loaded::File was loaded;added::Font was added;Move Guide;Delete Guide;Add Guide;Loading;Load VAR0::Keep VAR0 in a phrase, it will be replaced with a Noun when used];[Filter Gallery;[[Liquify::A filter;[Smudge::Draw over image to spread colors along your stroke;Reconstruct::Recover to original state;Smoothen::Make the effect more smooth;Twirl::Rotate in a spiral;Shrink::Make smaller;Blow::Make bigger;Push Left::ush colors to the left along the stroke;Freeze;Unfreeze]];[Lens Correction]];Blur::A noun;[Average::Average filter - fills the image with an average color;Blur:: A verb;Blur More;Box Blur;Gaussian Blur;Lens Blur;Motion Blur;Radial Blur;Shape Blur;Smart Blur;Surface Blur;Blur Gallery;[Field Blur;Iris Blur;Tilt-Shift;Path Blur;Spin Blur]];Distort;[Displace::Filter: move parts of image according to the brightness from another image;Pinch::Blow or shring around the center;Polar Coordinates;Ripple::Add tiny waves to the image;Shear;Spherize;Wave;ZigZag;Kaleidoscope];Noise::Filetr => Noise;[Add Noise;Despeckle;Dust & Scratches;Median;Reduce Noise];Pixelate;[Color Halftone;Crystallize;Facet;Fragment;Mezzotint;Mosaic;Pointillize];Render;[Clouds;Difference Clouds;Lens Flare;Flame;Fibers];Sharpen;[Sharpen;Sharpen Edges;Sharpen More;Smart Sharpen;Unsharp Mask];Stylize;[Diffuse;Emboss;Extrude;Find Edges;Oil Paint;Solarize;Trace Contour;Wind];Other;[Custom::A Custom kernel of the convolution;High Pass;Maximum;Minimum;Offset::Filter: shift the image horizontally and vertically;Repeat::Filter: Repeat the image many times;Color to Alpha::this filter makes a specific color transparent;Particles;Normal Map];[Undefined Area;Set to Transparent;Repeat Edge Pixels;Wrap Around;Last Filter;Preview];[Artistic;Brush Strokes;Sketch];[Colored Pencil::Following phrases are Filters in the Filter Gallery. Keep them empty to keep the English version in Photopea.;Cutout;Dry Brush;Film Grain;Fresco;Neon Glow;Paint Daubs;Palette Knife;Plastic Wrap;Poster Edges;Rough Pastels;Smudge Stick;Sponge;Underpainting;Watercolor;Accented Edges;Angled Strokes;Crosshatch;Dark Strokes;Ink Outlines;Spatter;Sprayed Strokes;Sumi-e;Diffuse Glow;Glass;Ocean Ripple;Bas Relief;Chalk & Charcoal;Charcoal;Chrome;Conté Crayon;Graphic Pen;Halftone Pattern;Note Paper;Photocopy;Plaster;Reticulation;Stamp;Torn Edges;Water Paper;Glowing Edges;Craquelure;Grain;Mosaic Tiles;Patchwork;Stained Glass;Texturizer::The last filter in the Filter Gallery.]];[Templates;[Font Filter;Keywords;Randomize];[With Symbols;With Photo];[Thumbnails;List]]"
 	]
 }
 
@@ -8100,27 +8108,27 @@ var LNG = {
 var CAMS = {
 "canon:canon eos 100d" : [
 	[6602,-841,-939,-4472,12458,2247,-975,2039,6148],
-	1,2046,15000
+	1,1000000000,0
 ],
 "canon:canon eos rebel sl1" : [
 	[6602,-841,-939,-4472,12458,2247,-975,2039,6148],
-	1,2046,15000
+	1,1000000000,0
 ],
 "canon:canon eos kiss x7" : [
 	[6602,-841,-939,-4472,12458,2247,-975,2039,6148],
-	1,2046,15000
+	1,1000000000,0
 ],
 "canon:canon eos 200d" : [
 	[7377,-742,-998,-4235,11981,2549,-673,1918,5538],
-	1,511,14338
+	1,1000000000,0
 ],
 "canon:canon eos rebel sl2" : [
 	[7377,-742,-998,-4235,11981,2549,-673,1918,5538],
-	1,511,14338
+	1,1000000000,0
 ],
 "canon:canon eos kiss x9" : [
 	[7377,-742,-998,-4235,11981,2549,-673,1918,5538],
-	1,511,14338
+	1,1000000000,0
 ],
 "canon:canon eos 300d digital" : [
 	[8197,-2000,-1118,-6714,14335,2592,-2536,3178,8266],
@@ -8180,143 +8188,143 @@ var CAMS = {
 ],
 "canon:canon eos 450d" : [
 	[5784,-262,-821,-7539,15064,2672,-1982,2681,7427],
-	1,1020,14500
+	1,1000000000,0
 ],
 "canon:canon eos digital rebel xsi" : [
 	[5784,-262,-821,-7539,15064,2672,-1982,2681,7427],
-	1,1020,14500
+	1,1000000000,0
 ],
 "canon:canon eos kiss digital x2" : [
 	[5784,-262,-821,-7539,15064,2672,-1982,2681,7427],
-	1,1020,14500
+	1,1000000000,0
 ],
 "canon:canon eos kiss x2" : [
 	[5784,-262,-821,-7539,15064,2672,-1982,2681,7427],
-	1,1020,14500
+	1,1000000000,0
 ],
 "canon:canon eos 50d" : [
 	[4920,616,-593,-6493,13964,2784,-1774,3178,7005],
-	3,1020,13653
+	3,1000000000,0
 ],
 "canon:canon eos 60d" : [
 	[6719,-994,-925,-4408,12426,2211,-887,2129,6051],
-	3,2026,14200
+	3,1000000000,0
 ],
 "canon:canon eos 70d" : [
 	[7034,-804,-1014,-4420,12564,2058,-851,1994,5758],
-	1,2026,16383
+	1,1000000000,0
 ],
 "canon:canon eos 80d" : [
 	[7457,-671,-937,-4849,12495,2643,-1213,2354,5492],
-	1,511,14338
+	1,1000000000,0
 ],
 "canon:canon eos 700d" : [
 	[6602,-841,-939,-4472,12458,2247,-975,2039,6148],
-	1,2048,15000
+	1,1000000000,0
 ],
 "canon:canon eos rebel t5i" : [
 	[6602,-841,-939,-4472,12458,2247,-975,2039,6148],
-	1,2048,15000
+	1,1000000000,0
 ],
 "canon:canon eos kiss x7i" : [
 	[6602,-841,-939,-4472,12458,2247,-975,2039,6148],
-	1,2048,15000
+	1,1000000000,0
 ],
 "canon:canon eos 750d" : [
 	[6362,-823,-847,-4426,12109,2616,-743,1857,5635],
-	1,2047,14580
+	1,1000000000,0
 ],
 "canon:canon eos rebel t6i" : [
 	[6362,-823,-847,-4426,12109,2616,-743,1857,5635],
-	1,2047,14580
+	1,1000000000,0
 ],
 "canon:canon eos kiss x8i" : [
 	[6362,-823,-847,-4426,12109,2616,-743,1857,5635],
-	1,2047,14580
+	1,1000000000,0
 ],
 "canon:canon eos 800d" : [
 	[6970,-512,-968,-4425,12161,2553,-739,1982,5601],
-	1,511,14338
+	1,1000000000,0
 ],
 "canon:canon eos rebel t7i" : [
 	[6970,-512,-968,-4425,12161,2553,-739,1982,5601],
-	1,511,14338
+	1,1000000000,0
 ],
 "canon:canon eos rebel t7i" : [
 	[6970,-512,-968,-4425,12161,2553,-739,1982,5601],
-	1,511,14338
+	1,1000000000,0
 ],
 "canon:canon eos kiss x9i" : [
 	[6970,-512,-968,-4425,12161,2553,-739,1982,5601],
-	1,511,14338
+	1,1000000000,0
 ],
 "canon:canon eos 760d" : [
 	[6362,-823,-847,-4426,12109,2616,-743,1857,5635],
-	1,2047,14580
+	1,1000000000,0
 ],
 "canon:canon eos rebel t6s" : [
 	[6362,-823,-847,-4426,12109,2616,-743,1857,5635],
-	1,2047,14580
+	1,1000000000,0
 ],
 "canon:canon eos 8000d" : [
 	[6362,-823,-847,-4426,12109,2616,-743,1857,5635],
-	1,2047,14580
+	1,1000000000,0
 ],
 "canon:canon eos 77d" : [
 	[7377,-742,-998,-4235,11981,2549,-673,1918,5538],
-	1,511,14338
+	1,1000000000,0
 ],
 "canon:canon eos 9000d" : [
 	[7377,-742,-998,-4235,11981,2549,-673,1918,5538],
-	1,511,14338
+	1,1000000000,0
 ],
 "canon:canon eos 500d" : [
 	[4763,712,-646,-6821,14399,2640,-1921,3276,6561],
-	1,1020,16000
+	1,1000000000,0
 ],
 "canon:canon eos rebel t1i" : [
 	[4763,712,-646,-6821,14399,2640,-1921,3276,6561],
-	1,1020,16000
+	1,1000000000,0
 ],
 "canon:canon eos kiss x3" : [
 	[4763,712,-646,-6821,14399,2640,-1921,3276,6561],
-	1,1020,16000
+	1,1000000000,0
 ],
 "canon:canon eos 550d" : [
 	[6941,-1164,-857,-3825,11597,2534,-416,1540,6039],
-	0,2048,15831
+	0,1000000000,0
 ],
 "canon:canon eos rebel t2i" : [
 	[6941,-1164,-857,-3825,11597,2534,-416,1540,6039],
-	0,2048,15831
+	0,1000000000,0
 ],
 "canon:canon eos kiss x4" : [
 	[6941,-1164,-857,-3825,11597,2534,-416,1540,6039],
-	0,2048,15831
+	0,1000000000,0
 ],
 "canon:canon eos 600d" : [
 	[6461,-907,-882,-4300,12184,2378,-819,1944,5931],
-	3,2026,15304
+	3,1000000000,0
 ],
 "canon:canon eos rebel t3i" : [
 	[6461,-907,-882,-4300,12184,2378,-819,1944,5931],
-	3,2026,15304
+	3,1000000000,0
 ],
 "canon:canon eos kiss x5" : [
 	[6461,-907,-882,-4300,12184,2378,-819,1944,5931],
-	3,2026,15304
+	3,1000000000,0
 ],
 "canon:canon eos 650d" : [
 	[6602,-841,-939,-4472,12458,2247,-975,2039,6148],
-	1,2026,15304
+	1,1000000000,0
 ],
 "canon:canon eos rebel t4i" : [
 	[6602,-841,-939,-4472,12458,2247,-975,2039,6148],
-	1,2026,15304
+	1,1000000000,0
 ],
 "canon:canon eos kiss x6i" : [
 	[6602,-841,-939,-4472,12458,2247,-975,2039,6148],
-	1,2026,15304
+	1,1000000000,0
 ],
 "canon:canon eos 5d" : [
 	[6347,-479,-972,-8297,15954,2480,-1968,2131,7649],
@@ -8324,119 +8332,119 @@ var CAMS = {
 ],
 "canon:canon eos 5d mark ii" : [
 	[4716,603,-830,-7798,15474,2480,-1496,1937,6651],
-	3,1024,15950
+	3,1000000000,0
 ],
 "canon:canon eos 5d mark iii" : [
 	[6722,-635,-963,-4287,12460,2028,-908,2162,5668],
-	1,2060,16383
+	1,1000000000,0
 ],
 "canon:canon eos 5d mark iv" : [
 	[6446,-366,-864,-4436,12204,2513,-952,2496,6348],
-	1,512,14448
+	1,1000000000,0
 ],
 "canon:canon eos 5ds" : [
 	[6250,-711,-808,-5153,12794,2636,-1249,2198,5610],
-	1,2048,15181
+	1,1000000000,0
 ],
 "canon:canon eos 5ds r" : [
 	[6250,-711,-808,-5153,12794,2636,-1249,2198,5610],
-	1,2048,15181
+	1,1000000000,0
 ],
 "canon:canon eos 6d" : [
 	[7034,-804,-1014,-4420,12564,2058,-851,1994,5758],
-	1,2047,16000
+	1,1000000000,0
 ],
 "canon:canon eos 6d mark ii" : [
 	[6875,-970,-932,-4691,12459,2501,-874,1953,5809],
-	1,513,14558
+	1,1000000000,0
 ],
 "canon:canon eos 7d" : [
 	[6844,-996,-856,-3876,11761,2396,-593,1772,6198],
-	3,2048,15400
+	3,1000000000,0
 ],
 "canon:canon eos 7d mark ii" : [
 	[7268,-1082,-969,-4186,11839,2663,-825,2029,5839],
-	1,2040,16000
+	1,1000000000,0
 ],
 "canon:canon eos 1000d" : [
 	[6771,-1139,-977,-7818,15123,2928,-1244,1437,7533],
-	1,255,4036
+	1,1000000000,0
 ],
 "canon:canon eos digital rebel xs" : [
 	[6771,-1139,-977,-7818,15123,2928,-1244,1437,7533],
-	1,255,4036
+	1,1000000000,0
 ],
 "canon:canon eos kiss digital f" : [
 	[6771,-1139,-977,-7818,15123,2928,-1244,1437,7533],
-	1,255,4036
+	1,1000000000,0
 ],
 "canon:canon eos kiss f" : [
 	[6771,-1139,-977,-7818,15123,2928,-1244,1437,7533],
-	1,255,4036
+	1,1000000000,0
 ],
 "canon:canon eos 1100d" : [
 	[6444,-904,-893,-4563,12308,2535,-903,2016,6728],
-	1,2036,15500
+	1,1000000000,0
 ],
 "canon:canon eos rebel t3" : [
 	[6444,-904,-893,-4563,12308,2535,-903,2016,6728],
-	1,2036,15500
+	1,1000000000,0
 ],
 "canon:canon eos kiss x50" : [
 	[6444,-904,-893,-4563,12308,2535,-903,2016,6728],
-	1,2036,15500
+	1,1000000000,0
 ],
 "canon:canon eos 1200d" : [
 	[6461,-907,-882,-4300,12184,2378,-819,1944,5931],
-	3,2046,15000
+	3,1000000000,0
 ],
 "canon:canon eos rebel t5" : [
 	[6461,-907,-882,-4300,12184,2378,-819,1944,5931],
-	3,2046,15000
+	3,1000000000,0
 ],
 "canon:canon eos kiss x70" : [
 	[6461,-907,-882,-4300,12184,2378,-819,1944,5931],
-	3,2046,15000
+	3,1000000000,0
 ],
 "canon:canon eos 1300d" : [
 	[6939,-1016,-866,-4428,12473,2177,-1175,2178,6162],
-	3,2046,15000
+	3,1000000000,0
 ],
 "canon:canon eos rebel t6" : [
 	[6939,-1016,-866,-4428,12473,2177,-1175,2178,6162],
-	3,2046,15000
+	3,1000000000,0
 ],
 "canon:canon eos kiss x80" : [
 	[6939,-1016,-866,-4428,12473,2177,-1175,2178,6162],
-	3,2046,15000
+	3,1000000000,0
 ],
 "canon:canon eos 2000d" : [
 	[8532,-701,-1167,-4095,11879,2508,-797,2424,7010],
-	3,2048,15092
+	3,1000000000,0
 ],
 "canon:canon eos rebel t7" : [
 	[8532,-701,-1167,-4095,11879,2508,-797,2424,7010],
-	3,2048,15092
+	3,1000000000,0
 ],
 "canon:canon eos 1500d" : [
 	[8532,-701,-1167,-4095,11879,2508,-797,2424,7010],
-	3,2048,15092
+	3,1000000000,0
 ],
 "canon:canon eos kiss x90" : [
 	[8532,-701,-1167,-4095,11879,2508,-797,2424,7010],
-	3,2048,15092
+	3,1000000000,0
 ],
 "canon:canon eos 4000d" : [
 	[6939,-1016,-866,-4428,12473,2177,-1175,2178,6162],
-	3,2046,15000
+	3,1000000000,0
 ],
 "canon:canon eos rebel t100" : [
 	[6939,-1016,-866,-4428,12473,2177,-1175,2178,6162],
-	3,2046,15000
+	3,1000000000,0
 ],
 "canon:canon eos 3000d" : [
 	[6939,-1016,-866,-4428,12473,2177,-1175,2178,6162],
-	3,2046,15000
+	3,1000000000,0
 ],
 "canon:canon eos 400d digital" : [
 	[7054,-1501,-990,-8156,15544,2812,-1278,1414,7796],
@@ -8452,31 +8460,31 @@ var CAMS = {
 ],
 "canon:canon eos m" : [
 	[6602,-841,-939,-4472,12458,2247,-975,2039,6148],
-	1,2026,15304
+	1,1000000000,0
 ],
 "canon:canon eos m2" : [
 	[6400,-480,-888,-5294,13416,2047,-1296,2203,6137],
-	1,2026,15304
+	1,1000000000,0
 ],
 "canon:canon eos m3" : [
 	[6362,-823,-847,-4426,12109,2616,-743,1857,5635],
-	1,2048,16000
+	1,1000000000,0
 ],
 "canon:canon eos m5" : [
 	[8532,-701,-1167,-4095,11879,2508,-797,2424,7010],
-	1,512,16000
+	1,1000000000,0
 ],
 "canon:canon eos m6" : [
 	[8532,-701,-1167,-4095,11879,2508,-797,2424,7010],
-	1,512,16000
+	1,1000000000,0
 ],
 "canon:canon eos m10" : [
 	[6400,-480,-888,-5294,13416,2047,-1296,2203,6137],
-	1,2048,16000
+	1,1000000000,0
 ],
 "canon:canon eos m100" : [
 	[8532,-701,-1167,-4095,11879,2508,-797,2424,7010],
-	1,512,16000
+	1,1000000000,0
 ],
 "canon:canon eos-1d" : [
 	[6806,-179,-1020,-8097,16415,1687,-3267,4236,7690],
@@ -8504,7 +8512,7 @@ var CAMS = {
 ],
 "canon:canon eos-1d mark iv" : [
 	[6014,-220,-795,-4109,12014,2361,-561,1824,5787],
-	3,2000,13000
+	3,1000000000,0
 ],
 "canon:canon eos-1ds mark ii" : [
 	[6517,-602,-867,-8180,15926,2378,-1618,1771,7633],
@@ -8512,15 +8520,15 @@ var CAMS = {
 ],
 "canon:canon eos-1ds mark iii" : [
 	[5859,-211,-930,-8255,16017,2353,-1732,1887,7448],
-	1,1021,15100
+	1,1000000000,0
 ],
 "canon:canon eos-1d x" : [
 	[6847,-614,-1014,-4669,12737,2139,-1197,2488,6846],
-	1,2050,15100
+	1,1000000000,0
 ],
 "canon:canon eos-1d x mark ii" : [
 	[7596,-978,-967,-4808,12571,2503,-1398,2567,5752],
-	1,512,14888
+	1,1000000000,0
 ],
 "canon:canon powershot pro1" : [
 	[10062,-3522,-999,-7643,15117,2730,-765,817,7323],
@@ -8536,7 +8544,7 @@ var CAMS = {
 ],
 "canon:canon powershot g3 x" : [
 	[9701,-3857,-921,-3149,11537,1817,-786,1817,5147],
-	1,2047,16000
+	1,1000000000,0
 ],
 "canon:canon powershot g5" : [
 	[9757,-2872,-933,-5972,13861,2301,-1622,2328,7212],
@@ -8544,7 +8552,7 @@ var CAMS = {
 ],
 "canon:canon powershot g5 x" : [
 	[9602,-3823,-937,-2984,11495,1675,-407,1415,5049],
-	1,2047,16000
+	1,1000000000,0
 ],
 "canon:canon powershot g6" : [
 	[9877,-3775,-871,-7613,14807,3072,-1448,1305,7485],
@@ -8552,35 +8560,35 @@ var CAMS = {
 ],
 "canon:canon powershot g7 x" : [
 	[9602,-3823,-937,-2984,11495,1675,-407,1415,5049],
-	1,511,4000
+	1,1000000000,0
 ],
 "canon:canon powershot g7 x mark ii" : [
 	[9602,-3823,-937,-2984,11495,1675,-407,1415,5049],
-	1,2046,16000
+	1,1000000000,0
 ],
 "canon:canon powershot g1 x" : [
 	[7378,-1255,-1043,-4088,12251,2048,-876,1946,5805],
-	1,0,16383
+	1,1000000000,0
 ],
 "canon:canon powershot g1 x mark ii" : [
 	[7378,-1255,-1043,-4088,12251,2048,-876,1946,5805],
-	1,0,16000
+	1,1000000000,0
 ],
 "canon:canon powershot g1 x mark iii" : [
 	[8532,-701,-1167,-4095,11879,2508,-797,2424,7010],
-	1,512,16000
+	1,1000000000,0
 ],
 "canon:canon powershot g12" : [
 	[13244,-5501,-1248,-1508,9858,1935,-270,1083,4366],
-	1,120,4095
+	1,1000000000,0
 ],
 "canon:canon powershot g11" : [
 	[12177,-4817,-1069,-1612,9864,2049,-98,850,4471],
-	1,120,4095
+	1,1000000000,0
 ],
 "canon:canon powershot g10" : [
 	[11093,-3906,-1028,-5047,12492,2879,-1003,1750,5561],
-	3,128,4095
+	3,1000000000,0
 ],
 "canon:canon powershot g9" : [
 	[7368,-2141,-598,-5621,13254,2625,-1418,1696,5743],
@@ -8588,23 +8596,23 @@ var CAMS = {
 ],
 "canon:canon powershot g9 x" : [
 	[9602,-3823,-937,-2984,11495,1675,-407,1415,5049],
-	1,2047,16000
+	1,1000000000,0
 ],
 "canon:canon powershot g9 x mark ii" : [
 	[10056,-4131,-944,-2576,11143,1625,-238,1294,5179],
-	1,2048,16000
+	1,1000000000,0
 ],
 "canon:canon powershot g15" : [
 	[7474,-2301,-567,-4056,11456,2975,-222,716,4181],
-	3,128,4095
+	3,1000000000,0
 ],
 "canon:canon powershot g16" : [
 	[8020,-2687,-682,-3704,11879,2052,-965,1921,5556],
-	1,0,4095
+	1,1000000000,0
 ],
 "canon:canon powershot sx1 is" : [
 	[6578,-259,-502,-5974,13030,3309,-308,1058,4970],
-	1,125,4095
+	1,1000000000,0
 ],
 "canon:canon powershot s30" : [
 	[10566,-3652,-1129,-6552,14662,2006,-2197,2581,7670],
@@ -8632,31 +8640,31 @@ var CAMS = {
 ],
 "canon:canon powershot s90" : [
 	[12374,-5016,-1049,-1677,9902,2078,-83,852,4683],
-	1,125,4095
+	1,1000000000,0
 ],
 "canon:canon powershot s95" : [
 	[13440,-5896,-1279,-1236,9598,1931,-180,1001,4651],
-	1,125,4095
+	1,1000000000,0
 ],
 "canon:canon powershot s100" : [
 	[7968,-2565,-636,-2873,10697,2513,180,667,4211],
-	3,125,4095
+	3,1000000000,0
 ],
 "canon:canon powershot s110" : [
 	[8039,-2643,-654,-3783,11230,2930,-206,690,4194],
-	3,128,4095
+	3,1000000000,0
 ],
 "canon:canon powershot s120" : [
 	[6961,-1685,-695,-4625,12945,1836,-1114,2152,5518],
-	1,0,4000
+	1,1000000000,0
 ],
 "canon:canon powershot sx50 hs" : [
 	[12432,-4753,-1247,-2110,10691,1629,-412,1623,4926],
-	1,127,4095
+	1,1000000000,0
 ],
 "canon:canon powershot sx60 hs" : [
 	[13161,-5451,-1344,-1989,10654,1531,-47,1271,4955],
-	1,128,4000
+	1,1000000000,0
 ],
 "nikon corporation:nikon d100" : [
 	[5902,-933,-782,-8983,16719,2354,-1402,1455,6464],
@@ -8956,6 +8964,10 @@ var CAMS = {
 ],
 "nikon corporation:nikon z 9" : [
 	[13389,-6049,-1441,-4544,12757,1969,229,498,7390],
+	1,1008,15892
+],
+"nikon corporation:nikon z f" : [
+	[11607,-4491,-977,-4522,12460,2304,-458,1519,7616],
 	1,1008,15892
 ],
 "nikon corporation:nikon z 30" : [
@@ -9386,6 +9398,10 @@ var CAMS = {
 	[8198,-2239,-724,-4871,12389,2798,-1043,2050,7181],
 	1,0,15892
 ],
+"nikon corporation:coolpix a1000" : [
+	[10601,-3487,-1127,-2931,11443,1676,-587,1740,5278],
+	1,0,3890
+],
 "nikon:coolpix b700" : [
 	[14387,-6014,-1299,-1357,9975,1616,467,1047,4744],
 	1,200,4000
@@ -9682,6 +9698,10 @@ var CAMS = {
 	[11896,-5110,-1076,-3181,11378,2048,-519,1224,5166],
 	-1,256,4000
 ],
+"om digital solutions:tg-7" : [
+	[10899,-3833,-1082,-2112,10736,1575,-267,1452,5269],
+	2,257,4000
+],
 "panasonic:dmc-cm1" : [
 	[8770,-3194,-820,-2871,11281,1803,-513,1552,4434],
 	-1,142,4095
@@ -9749,6 +9769,26 @@ var CAMS = {
 "panasonic:dmc-fz200" : [
 	[8112,-2563,-740,-3730,11784,2197,-941,2075,4933],
 	-1,150,3956
+],
+"leica:v-lux 4" : [
+	[8112,-2563,-740,-3730,11784,2197,-941,2075,4933],
+	-1,143,3956
+],
+"leica:v-lux 4" : [
+	[8112,-2563,-740,-3730,11784,2197,-941,2075,4933],
+	-1,143,3956
+],
+"leica:v-lux 4" : [
+	[8112,-2563,-740,-3730,11784,2197,-941,2075,4933],
+	-1,143,3956
+],
+"leica:v-lux 4" : [
+	[8112,-2563,-740,-3730,11784,2197,-941,2075,4933],
+	-1,143,3956
+],
+"leica:v-lux 4" : [
+	[8112,-2563,-740,-3730,11784,2197,-941,2075,4933],
+	-1,143,3956
 ],
 "panasonic:dmc-fz2000" : [
 	[7386,-2443,-743,-3437,11864,1757,-608,1660,4766],
@@ -10403,6 +10443,14 @@ var CAMS = {
 	-1,143,4095
 ],
 "panasonic:dc-fz10002" : [
+	[9803,-4185,-992,-4066,12578,1628,-838,1824,5288],
+	-1,143,4095
+],
+"leica camera ag:v-lux 5" : [
+	[9803,-4185,-992,-4066,12578,1628,-838,1824,5288],
+	-1,143,4095
+],
+"leica camera ag:v-lux 5" : [
 	[9803,-4185,-992,-4066,12578,1628,-838,1824,5288],
 	-1,143,4095
 ],
@@ -11430,7 +11478,35 @@ var CAMS = {
 	[7790,-2736,-755,-3452,11870,1769,-628,1647,4898],
 	-1,142,4095
 ],
+"panasonic:dc-tz200d" : [
+	[7790,-2736,-755,-3452,11870,1769,-628,1647,4898],
+	-1,142,4095
+],
+"panasonic:dc-tz202d" : [
+	[7790,-2736,-755,-3452,11870,1769,-628,1647,4898],
+	-1,142,4095
+],
+"panasonic:dc-tz220" : [
+	[7790,-2736,-755,-3452,11870,1769,-628,1647,4898],
+	-1,142,4095
+],
+"panasonic:dc-tz220d" : [
+	[7790,-2736,-755,-3452,11870,1769,-628,1647,4898],
+	-1,142,4095
+],
 "panasonic:dc-zs200" : [
+	[7790,-2736,-755,-3452,11870,1769,-628,1647,4898],
+	-1,142,4095
+],
+"panasonic:dc-zs200d" : [
+	[7790,-2736,-755,-3452,11870,1769,-628,1647,4898],
+	-1,142,4095
+],
+"panasonic:dc-zs220" : [
+	[7790,-2736,-755,-3452,11870,1769,-628,1647,4898],
+	-1,142,4095
+],
+"panasonic:dc-zs220d" : [
 	[7790,-2736,-755,-3452,11870,1769,-628,1647,4898],
 	-1,142,4095
 ],
@@ -11546,6 +11622,10 @@ var CAMS = {
 	[9895,-3077,-850,-5304,13035,2521,-883,1768,6936],
 	0,64,4000
 ],
+"ricoh imaging company, ltd.:pentax kf" : [
+	[8113,-2078,-1275,-4359,12953,1514,-1091,1955,6044],
+	1,64,16319
+],
 "ricoh imaging company, ltd.:pentax kp" : [
 	[8617,-3228,-1034,-4674,12821,2044,-803,1577,5728],
 	1,128,16254
@@ -11642,6 +11722,10 @@ var CAMS = {
 	[8060,-2933,-761,-4504,12890,1762,-630,1489,5227],
 	2,0,4095
 ],
+"samsung:nx3300" : [
+	[8060,-2933,-761,-4504,12890,1762,-630,1489,5227],
+	2,0,4095
+],
 "samsung:nx500" : [
 	[10686,-4042,-1052,-3595,13238,276,-464,1259,5931],
 	2,128,16100
@@ -11652,7 +11736,7 @@ var CAMS = {
 ],
 "samsung:ek-gn120" : [
 	[7557,-2522,-739,-4679,12949,1894,-840,1777,5311],
-	3,0,4095
+	2,0,4095
 ],
 "samsung:wb2000" : [
 	[12093,-3557,-1155,-1000,9534,1733,-22,1787,4576],
@@ -11898,6 +11982,14 @@ var CAMS = {
 	[7374,-2389,-551,-5435,13162,2519,-1006,1795,6552],
 	1,512,16383
 ],
+"sony:ilce-7cm2" : [
+	[7460,-2365,-588,-5687,13442,2474,-624,1156,6584],
+	1,512,16383
+],
+"sony:ilce-7cr" : [
+	[8200,-2976,-719,-4296,12053,2532,-429,1282,5774],
+	1,512,16383
+],
 "sony:ilce-7r" : [
 	[4913,-541,-202,-6130,13513,2906,-1564,2151,7183],
 	1,512,16300
@@ -12026,6 +12118,10 @@ var CAMS = {
 	[6355,-2067,-490,-3653,11542,2400,-406,1258,5506],
 	1,512,16383
 ],
+"sony:ilme-fx3" : [
+	[6912,-2127,-469,-4470,12175,2587,-398,1478,6492],
+	1,512,16383
+],
 "sony:ilme-fx30" : [
 	[6972,-2408,-600,-4330,12101,2515,-388,1277,5847],
 	1,512,16380
@@ -12134,6 +12230,10 @@ var CAMS = {
 	[12343,-4515,-1285,-7165,14899,2435,-1895,2496,8800],
 	3,0,15872
 ],
+"fujifilm:finepix sl1000" : [
+	[11705,-4262,-1107,-2282,10791,1709,-555,1713,4945],
+	1,200,4095
+],
 "fujifilm:finepix hs10 hs11" : [
 	[12440,-3954,-1183,-1123,9674,1708,-83,1614,4086],
 	0,50,3900
@@ -12204,6 +12304,14 @@ var CAMS = {
 ],
 "fujifilm:gfx100s" : [
 	[16212,-8423,-1583,-4336,12583,1937,-195,726,6199],
+	1,0,0
+],
+"fujifilm:gfx100 ii" : [
+	[12806,-5779,-1110,-3546,11507,2318,-177,996,5715],
+	1,0,0
+],
+"fujifilm:gfx100 ii" : [
+	[12806,-5779,-1110,-3546,11507,2318,-177,996,5715],
 	1,0,0
 ],
 "fujifilm:x-pro1" : [
@@ -12654,6 +12762,50 @@ var CAMS = {
 	[4932,-835,141,-4878,11868,3437,-1138,1961,7067],
 	1,256,62914
 ],
+"hasselblad:hasselblad cfv-50c" : [
+	[4932,-835,141,-4878,11868,3437,-1138,1961,7067],
+	1,256,62914
+],
+"hasselblad:cfv-50c/flash sync" : [
+	[4932,-835,141,-4878,11868,3437,-1138,1961,7067],
+	1,256,62914
+],
+"hasselblad:cfv-50c/swc" : [
+	[4932,-835,141,-4878,11868,3437,-1138,1961,7067],
+	1,256,62914
+],
+"hasselblad:cfv-50c/200" : [
+	[4932,-835,141,-4878,11868,3437,-1138,1961,7067],
+	1,256,62914
+],
+"hasselblad:cfv-50c/500" : [
+	[4932,-835,141,-4878,11868,3437,-1138,1961,7067],
+	1,256,62914
+],
+"hasselblad:cfv-50c/schneider" : [
+	[4932,-835,141,-4878,11868,3437,-1138,1961,7067],
+	1,256,62914
+],
+"hasselblad:cfv-50c/lensctrl s" : [
+	[4932,-835,141,-4878,11868,3437,-1138,1961,7067],
+	1,256,62914
+],
+"hasselblad:cfv-50c/winder cw" : [
+	[4932,-835,141,-4878,11868,3437,-1138,1961,7067],
+	1,256,62914
+],
+"hasselblad:cfv-50c/eld" : [
+	[4932,-835,141,-4878,11868,3437,-1138,1961,7067],
+	1,256,62914
+],
+"hasselblad:cfv-50c/elx" : [
+	[4932,-835,141,-4878,11868,3437,-1138,1961,7067],
+	1,256,62914
+],
+"hasselblad:cfv-50c/pinhole" : [
+	[4932,-835,141,-4878,11868,3437,-1138,1961,7067],
+	1,256,62914
+],
 "hasselblad:flash sync" : [
 	[8519,-3260,-280,-5081,13459,1738,-1449,2960,7809],
 	1,0,62914
@@ -12674,6 +12826,14 @@ var CAMS = {
 	[5002,-878,111,-4856,11929,3338,-1183,2041,7022],
 	1,256,62914
 ],
+"hasselblad:hasselblad cfv ii 50c" : [
+	[5002,-878,111,-4856,11929,3338,-1183,2041,7022],
+	1,256,62914
+],
+"hasselblad:cfv ii 50c/907x" : [
+	[5002,-878,111,-4856,11929,3338,-1183,2041,7022],
+	1,256,62914
+],
 "hasselblad:x2d 100c" : [
 	[6468,-1899,-545,-4526,12267,2542,-388,1276,6096],
 	1,4267,65535
@@ -12681,8 +12841,18 @@ var CAMS = {
 "hasselblad:hasselblad x2d 100c" : [
 	[6468,-1899,-545,-4526,12267,2542,-388,1276,6096],
 	1,4267,65535
+],
+"hasselblad:hasselblad cfv 100c" : [
+	[6468,-1899,-545,-4526,12267,2542,-388,1276,6096],
+	1,4267,65535
+],
+"hasselblad:cfv 100c/907x" : [
+	[6468,-1899,-545,-4526,12267,2542,-388,1276,6096],
+	1,4267,65535
 ]
 };
+
+
 /** A database of LUTs. */
 
 var LUTS = {

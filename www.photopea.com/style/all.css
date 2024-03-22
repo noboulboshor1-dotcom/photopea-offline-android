@@ -935,10 +935,11 @@
 	
 	.imageset  .image, .imageset canvas
 	{
-		border-right: 1px solid rgba(0,0,0,0.2);
-		border-bottom: 1px solid rgba(0,0,0,0.2);
+		/*border-right: 1px solid rgba(0,0,0,0.2);
+		border-bottom: 1px solid rgba(0,0,0,0.2);*/
+		margin: 0 1px 1px 0;
 		cursor: pointer;
-		float:left;
+		vertical-align:middle;
 	}
 	.imageset .selected {
 		outline: 1.5px solid #00aaff;

@@ -151,7 +151,7 @@
 		lst.push("</span>");
 		
 		if(big) {
-			lst.push("<p>"+findLinks(escapeHtml(tpl[10]))+"</p>");
+			lst.push("<p style=\"white-space: pre-line;\">"+findLinks(escapeHtml(tpl[10]))+"</p>");
 			lst.push("<p style=\"font-size:1.5em; margin-bottom: 0em;\">");
 			var dstr = printDate(tpl[2]);
 			

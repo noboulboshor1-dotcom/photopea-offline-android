@@ -16,11 +16,7 @@ root = "www.photopea.com/"
 website = "https://photopea.com/"
 urls = [
     "index.html",
-    "style/all.css",
-    "code/ext/ext.js",
     "promo/thumb256.png",
-    "code/pp/pp.js",
-    "code/dbs/DBS.js",
     "rsrc/basic/basic.zip",
     "code/ext/hb.wasm",
     "code/ext/fribidi.wasm",
@@ -72,10 +68,23 @@ def dl_file(path):
 
     download_file(website + path,root+outfn)
 
+dl_file(urls[0]) #Always download the index.html page first
+
+index = open(root+"index.html", encoding="utf-8").read()
+
+regex_paths = {"_": r"style/all(\d+).css", "__": r"code/ext/ext(\d+).js", "DBS": r"code/dbs/DBS(\d+).js", "PP": r"code/pp/pp(\d+).js"}
+
+for name, pattern in regex_paths.items():
+    match = re.search(pattern, index)
+    match = match.group(0)
+    urls.append(match)
+    if not name.startswith("_"):
+        globals()[name]=match
+
 for url in urls:
     dl_file(url)
 
-db_data = open(root + "code/dbs/DBS.js",encoding="utf-8").read()
+db_data = open(root + DBS,encoding="utf-8").read()
 db_vars = re.findall(r"var (\w+)\s*=\s*(\{[\w\W]+?\n\s*\})\s*(?=;|/\*|var)", db_data)
 db = {}
 
@@ -164,14 +173,14 @@ def find_and_replace(file,find,replace):
         pp.write(file1)
 
 #Allow any port to be used
-find_and_replace('code/pp/pp.js','"\'$!|"))','"\'$!|"))||true')
+find_and_replace(PP,'"\'$!|"))','"\'$!|"))||true')
 
 #Don't load Google Analytics
 find_and_replace('index.html','//www.google-analytics.com/analytics.js','')
 find_and_replace('index.html', '//www.googletagmanager.com', '#')
 
 #Allow the import of pictures of URLs (bypassing mirror.php)
-find_and_replace('code/pp/pp.js','"mirror.php?url="+encodeURIComponent','')
+find_and_replace(PP,'"mirror.php?url="+encodeURIComponent','')
 
 #Allow Dropbox to load from dropboxStorage.html
 find_and_replace('code/storages/dropboxStorage.html', 'var redirectUri = window.location.href;', 'var redirectUri = "https://www.photopea.com/code/storages/dropboxStorage.html";')
@@ -182,11 +191,11 @@ find_and_replace('index.html','https://connect.facebook.net','')
 find_and_replace('index.html','https://www.facebook.com','')
 
 #Redirect dynamic pages to static equivalent
-find_and_replace('code/pp/pp.js','"&rsrc="','""')
-find_and_replace('code/pp/pp.js','"templates/?type="','"templates/index.html?type="')
-find_and_replace('code/pp/pp.js','"https://f000.backblazeb2.com/file/"', '"templates/file/"')
+find_and_replace(PP,'"&rsrc="','""')
+find_and_replace(PP,'"templates/?type="','"templates/index.html?type="')
+find_and_replace(PP,'"https://f000.backblazeb2.com/file/"', '"templates/file/"')
 
 #Force enable Remove BG, and any other options that are disabled on self-hosted instances (much more brittle to changes than the other replacements)
-find_and_replace("code/pp/pp.js",'("~yy")','("~yy")||true')
+find_and_replace(PP,'("~yy")','("~yy")||true')
 # Having ? in static sites doesn't really work
 #find_and_replace("templates/index.html",'sch.split("?");','sch.split("#");')

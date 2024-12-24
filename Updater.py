@@ -166,10 +166,10 @@ if '--templates' in sys.argv:
         os.remove(tpl)
     
 def find_and_replace(file,find,replace):
-    with open(os.path.join(root,file),'r') as pp:
+    with open(os.path.join(root,file),'r', encoding="utf-8") as pp:
         file1=pp.read()
     file1=file1.replace(find,replace)
-    with open(os.path.join(root,file),'w') as pp:
+    with open(os.path.join(root,file),'w', encoding="utf-8") as pp:
         pp.write(file1)
 
 #Allow any port to be used

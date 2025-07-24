@@ -172,30 +172,31 @@ def find_and_replace(file,find,replace):
     with open(os.path.join(root,file),'w', encoding="utf-8") as pp:
         pp.write(file1)
 
-#Allow any port to be used
-find_and_replace(PP,'"\'$!|"))','"\'$!|"))||true')
+if (not True):
+    #Allow any port to be used
+    find_and_replace(PP,'"\'$!|"))','"\'$!|"))||true')
 
-#Don't load Google Analytics
-find_and_replace('index.html','//www.google-analytics.com/analytics.js','')
-find_and_replace('index.html', '//www.googletagmanager.com', '#')
+    #Don't load Google Analytics
+    find_and_replace('index.html','//www.google-analytics.com/analytics.js','')
+    find_and_replace('index.html', '//www.googletagmanager.com', '#')
 
-#Allow the import of pictures of URLs (bypassing mirror.php)
-find_and_replace(PP,'"mirror.php?url="+encodeURIComponent','')
+    #Allow the import of pictures of URLs (bypassing mirror.php)
+    find_and_replace(PP,'"mirror.php?url="+encodeURIComponent','')
 
-#Allow Dropbox to load from dropboxStorage.html
-find_and_replace('code/storages/dropboxStorage.html', 'var redirectUri = window.location.href;', 'var redirectUri = "https://www.photopea.com/code/storages/dropboxStorage.html";')
+    #Allow Dropbox to load from dropboxStorage.html
+    find_and_replace('code/storages/dropboxStorage.html', 'var redirectUri = window.location.href;', 'var redirectUri = "https://www.photopea.com/code/storages/dropboxStorage.html";')
 
-#Remove Facebook Pixel Domains
-find_and_replace('index.html','https://connect.facebook.net','')
+    #Remove Facebook Pixel Domains
+    find_and_replace('index.html','https://connect.facebook.net','')
 
-find_and_replace('index.html','https://www.facebook.com','')
+    find_and_replace('index.html','https://www.facebook.com','')
 
-#Redirect dynamic pages to static equivalent
-find_and_replace(PP,'"&rsrc="','""')
-find_and_replace(PP,'"templates/?type="','"templates/index.html?type="')
-find_and_replace(PP,'"https://f000.backblazeb2.com/file/"', '"templates/file/"')
+    #Redirect dynamic pages to static equivalent
+    find_and_replace(PP,'"&rsrc="','""')
+    find_and_replace(PP,'"templates/?type="','"templates/index.html?type="')
+    find_and_replace(PP,'"https://f000.backblazeb2.com/file/"', '"templates/file/"')
 
-#Force enable Remove BG, and any other options that are disabled on self-hosted instances (much more brittle to changes than the other replacements)
-find_and_replace(PP,'("~yy")','("~yy")||true')
-# Having ? in static sites doesn't really work
-#find_and_replace("templates/index.html",'sch.split("?");','sch.split("#");')
+    #Force enable Remove BG, and any other options that are disabled on self-hosted instances (much more brittle to changes than the other replacements)
+    find_and_replace(PP,'("~yy")','("~yy")||true')
+    # Having ? in static sites doesn't really work
+    #find_and_replace("templates/index.html",'sch.split("?");','sch.split("#");')

@@ -187,12 +187,16 @@
 				if(added) return;  added=true;  console.log("adding");
 				var fls = [
 					"style/all09.css",
-					"code/ext/ext1727353186.js",
-					"code/dbs/DBS1727686859.js",
-					"code/pp/pp1728070986.js"
+					"code/ext/ext1753387088.js",
+					"code/dbs/DBS1751979998.js",
+					"code/pp/pp1753360222.js"
 				];
+				var fromCDN = window.location.host=="www.photopea.com" && !window.location.href.endsWith("nocdn");
+				var ao = window.location.ancestorOrigins;
+				if(ao) for(var i=0; i<ao.length; i++) if(ao[i].indexOf("figma.com")!=-1) fromCDN=false;
+				
 				for(var i=0; i<fls.length; i++) {
-					var url = (window.location.host=="www.photopea.com"?"//vecpea.com/":"")+fls[i], isJS = url.endsWith(".js");
+					var url = (fromCDN?"//vecpea.com/":"")+fls[i], isJS = url.endsWith(".js");
 					var el = document.createElement(isJS ? "script" : "link");
 					el.setAttribute(isJS ? "src" : "href",url);
 					if(!isJS) el.setAttribute("rel","stylesheet");

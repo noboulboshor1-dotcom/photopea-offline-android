@@ -19,7 +19,7 @@
 			var tpls, IFR=false, TYPE=0, RSRC=[], OTPLS;
 			var ccat = -1, caut = -1, citm = -1, ordr = 0, cscr = 0;  // current scroll
 			var lo=localStorage.getItem("ordr");  if(lo) lo=JSON.parse(lo);  if(lo && lo[1]>Date.now()-30000) ordr=lo[0];
-			var cont, cats, search, back, itms, kwds, add_link;
+			var cont, cats, search, back, itms, kwds, add_link, menubtn;
 			function clearNode(node) {  while(node.firstChild) node.removeChild(node.firstChild);  }
 			function isDisplayed(nd) {  while(true) {  if(nd==document) return true;  if(nd==null) return false;  nd=nd.parentNode;  }  }
 			
@@ -31,10 +31,11 @@
 				back = document.getElementById("back");  cont.removeChild(back);
 				itms = document.getElementById("itms");
 				add_link = document.getElementById("add_link");
+				menubtn  = document.getElementsByClassName("order")[0];
 				window.addEventListener("resize",onResize,false);  onResize();
 			
 				var request = new XMLHttpRequest();
-				request.open("GET", "../papi/tpls.json?r="+Date.now(), true);
+				request.open("GET", "../papi/tpls.json", true);
 				request.onload = imgsLoaded;
 				request.onerror = function(e) {  console.log(e.target.response);  }
 				request.send();
@@ -128,12 +129,21 @@
 			
 			function updateView() {
 				var w = window.innerWidth, h=window.innerHeight;
-				var sh = 90;  if(w<1000) sh=130;  if(w<800) sh=160;
-				itms.style.height=(h-sh)+"px";
-				cats.style.height=(h- 1)+"px";
 				
-				add_link.style.display=(false?"none":"inline-block");
-				add_link.textContent = TYPE==0 ? "Add your own template!" : (TYPE==1 ? "Add your own plugin!":"");
+				var tiny = w<560;
+				
+				cats.setAttribute("style", tiny ? "display:none; position:fixed; top:56px;  left:12px; background-color:#333333; z-index:2;" : "");
+				cont.setAttribute("style", tiny ? "padding: 10px 0 0 12px;" : "padding: 20px 0 0 30px;");
+				
+				menubtn.style.display=(!tiny)?"none":"";
+				
+				
+				kwds.style.width=(w-(tiny?326:526))+"px";
+				var sh = tiny?63:72;
+				
+				itms.style.height=(h-sh)+"px";
+				cats.style.height=(h- 1-(tiny?56:0))+"px";
+				
 				add_link.setAttribute("href",
 					TYPE==0 ? "//www.photopea.com/tuts/publish-your-psd-templates-in-photopea/" : "//www.photopea.com/api/plugins");
 			
@@ -153,7 +163,8 @@
 				var out = [];
 				if     (caut==-2) printAuthors  (tpls, out);
 				else if(caut==-3) printInstalled(tpls, out);
-				else              makeView(tpls,out,twds,wds,ccat,caut,citm);
+				else              makeView(tpls,out,twds,wds,ccat,caut,citm, w-(tiny ? 2*12 : 210+2*30));
+				
 				
 				itms.innerHTML=out.join("\n");
 				
@@ -163,9 +174,13 @@
 				
 				if(citm==-1) {
 					var ords = document.getElementsByClassName("order");
-					for(var i=0; i<3; i++) ords[i].setAttribute("class", "order"+(i==ordr ? " blue":""));
+					for(var i=0; i<3; i++) ords[i+1].setAttribute("class", "order"+(i==ordr ? " blue":""));
 				}
-			}			
+			}		
+			function showMenu() {
+				var non = cats.style.display=="none";
+				cats.style.display=non?"":"none";
+			}
 			
 			function backClicked(e) {
 				if(IFR) rebuild("");
@@ -218,13 +233,19 @@
 	
 		<div id="cont">
 			<div id="search">
+				<span onclick="showMenu() " class="order">☰</span>
 				<span onclick="setOrder(0)" class="order blue">Hot</span>
 				<span onclick="setOrder(1)" class="order">New</span>
-				<span onclick="setOrder(2)" class="order" style="margin-right:2em">Top</span>
+				<span onclick="setOrder(2)" class="order" style="margin-right:1.7em">Top</span>
 				<span style="display:inline-block">
-					<label>Search:</label> <input type="text" id="kwds" oninput="updateView()" style="margin-right:1.5em;"></input>
+					<svg width="20px" height="20px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;"><defs><style>.cls-1{fill:none;stroke:#a5a5a5;stroke-miterlimit:10;stroke-width:2.2px;}</style></defs><circle class="cls-1" cx="9.14" cy="9.14" r="7.64"/><line class="cls-1" x1="22.5" y1="22.5" x2="14.39" y2="14.39"/></svg>
+					<input type="text" id="kwds" oninput="updateView()" style="margin-right:0.5em;" size="10"></input>
 				</span>
-				<a id="add_link" href="//www.photopea.com/tuts/publish-your-psd-templates-in-photopea/" target="_blank">Add your own template!</a>
+				<a id="add_link" href="//www.photopea.com/tuts/publish-your-psd-templates-in-photopea/" target="_blank">
+				<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
+				<path d="M15 12H12M12 12H9M12 12V9M12 12V15M17 21H7C4.79086 21 3 19.2091 3 17V7C3 4.79086 4.79086 3 7 3H17C19.2091 3 21 4.79086 21 7V17C21 19.2091 19.2091 21 17 21Z" stroke="#a5a5a5" stroke-width="2" stroke-linecap="round"/>
+				</svg>
+				</a>
 			</div>
 			<div id="back">
 				<span class="back" onclick="backClicked()">&lt; Back</span>

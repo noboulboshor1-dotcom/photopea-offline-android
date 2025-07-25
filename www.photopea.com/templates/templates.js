@@ -62,7 +62,7 @@
 		out.push("</table>");
 	}
 	
-	function makeView(tps,out,twds,wds,curc,caut,cit) {
+	function makeView(tps,out,twds,wds,curc,caut,cit, w) {
 		var list = tps.list, cts=tps.categories;				
 		if(cit==-1) {
 			if(caut!=-1) out.push("<h1 style=\"font-size:2.4em\"><a "+OC("-a")+" class=\"clc\">×</a> <b>"+escapeHtml(tps.authors[caut][1])+"</b></h1>");
@@ -82,15 +82,29 @@
 					}
 					if(occ==0) continue;
 				}
-				makeItem(tps,i, cts,out, false);
+				if(N<300) makeItem(tps,i, cts,out, false, w);
 				N++;  U+=tpl[7];  S+=tpl[8];
 			}
 			if(caut!=-1) out[oi]="<p>"+N+" Templates • "+printNum(U)+" "+uses()+" • "+printBytes(S)+"</p>";
 		}
 		else {
 			var tpl = list[cit];
-			makeItem(tps,cit,cts,out, true);
-			out.push("<iframe src=\"comments.html#"+tempID(tpl)+"\" frameborder=\"0\" style=\"border:none;  max-width:800px; width:calc(100% - 20px); height:800px; background-color:white;\"></iframe>");
+			makeItem(tps,cit,cts,out, true, w);
+			var scr = document.createElement("script");
+					var ats = {  "async":"","defer":"","crossorigin":"anonymous",
+					"src":"https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v22.0&appId=423117247858550" };
+					for(var at in ats) scr.setAttribute(at, ats[at]);
+					document.body.appendChild(scr);
+					
+					var url = "https://www.photopea.com/templates#"+tempID(tpl);//, href = window.location.href, ioh=href.indexOf("#");
+					
+					//var out = [];
+					out.push("<div id=\"fb-root\"></div>");
+					out.push("<div style=\"background-color:white; max-width:1000px; margin-right:16px;\"><div class=\"fb-comments\" data-href=\""+url+"\" data-width=\"100%\" data-order-by=\"reverse_time\" data-numposts=\"5\"></div></div>");
+					//var div = document.createElement("div");
+					//div.innerHTML = out.join("\n");
+					//document.body.appendChild(div);
+			//out.push("<iframe src=\"comments.html#"+tempID(tpl)+"\" frameborder=\"0\" data-order-by=\"time\" style=\"border:none;  max-width:800px; width:calc(100% - 20px); height:800px; background-color:white;\"></iframe>");
 		}
 	}
 	
@@ -108,21 +122,22 @@
 		t.setAttribute("style", "object-position: 50% 50%;");
 	}
 	function toID(str) {  return str.toLowerCase().replace(/\s+/g, "-")+".html"; }
-	function makeItem(tps, ind,cts,lst, big) {
+	function makeItem(tps, ind,cts,lst, big, rst) {
+		var tall = window.innerWidth*0.8<window.innerHeight;
 		var tpl = tps.list[ind], gotR = RSRC.indexOf(tpl[3])!=-1;
-		var rst = window.innerWidth-(245+30)-2;  //console.log(iw);
-		var num = 1;  while(rst/num>300) num++;
+		//console.log(iw);
+		var num = 1;  while(rst/num>340) num++;
 		var cc = Math.floor(rst/num);  //console.log(cc);
 		var isz = cc-16;  //console.log(isz);
 		
 		var tit = escapeHtml(tpl[9]);
 		var lim = ~~(isz/9);  //console.log(tpl);
 		
-		if(big) isz=rst/2;
+		if(big) isz=tall ? rst-14 : rst/2;
 		var wi = (isz+"px");
-		var hi = ((isz*9.3/16)+"px");
+		var hi = ((isz*9/16)+"px");
 		
-		lst.push("<div class=\"item "+(big?"flexrow":"tiny")+"\" "+(big?"":"style=\"width:"+wi+";\" ")+">");
+		lst.push("<div class=\"item "+(big?(tall?"":"flexrow"):"tiny")+"\" "+(big?"":"style=\"width:"+wi+";\" ")+">");
 		
 		var iurl = tpl[4]; //(Math.random()<0.5?"wide.png":"tall.png");  // tpl[3]
 		//*
@@ -135,7 +150,7 @@
 		//if(big) lst.push("<div class=\"openimg\" style=\"width:"+wi+"; height:"+hi+";\" "+(big ? "onclick=\"itemClicked("+ind+")\" title=\"Open &quot;"+tit+"&quot;\"" : "")+"><br/><br/>Open</div>");
 		if(!big) lst.push("</a>");
 		lst.push("</div>"); // ict
-		lst.push("<div class=\""+"post"+(big?"_big":"")+"\">"); // cmt
+		lst.push("<div style=\""+(big?(tall?"padding-top:20px;":"padding:24px;"):"margin-top:16px;min-width:1000px;")+"\">"); // cmt
 		
 		if(!big) lst.push("<a class=\"clc\" "+OC("t-"+tempID(tpl))+" title=\""+tit+"\">");
 		var tag = big?"h1":"span";
@@ -152,7 +167,7 @@
 		
 		if(big) {
 			lst.push("<p style=\"white-space: pre-line;\">"+findLinks(escapeHtml(tpl[10]))+"</p>");
-			lst.push("<p style=\"font-size:1.5em; margin-bottom: 0em;\">");
+			lst.push("<p style=\"font-size:1.3em; margin-bottom: 0em;\">");
 			var dstr = printDate(tpl[2]);
 			
 			lst.push("<span title=\""+printNum(tpl[6])+" views"+"\">"+printNum(tpl[7])+" "+uses()+"</span>")
@@ -273,7 +288,7 @@
 	function getCats(tps, curr,out) {
 		var cts=tps.categories, ccnt = getCatCounts(tps);	
 		out.push("<br/>");
-		out.push("<span class=\"cat top clickable\"><a "+OC("authors")+">AUTHORS</a></span>");			
+		out.push("<span class=\"cat top clickable\"><a "+OC("authors")+">AUTHORS</a></span><br/>");			
 		out.push("<span class=\"cat_title\">CATEGORIES</span>");
 		for(var cat in cts) {
 			if(ccnt[cat]==0) continue;

@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dropbox@10.9.0/dist/Dropbox-sdk.min.js"></script>
+		<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropbox.js/10.9.0/Dropbox-sdk.min.js"></script>-->
 	</head>
 	<body onload="go()">
 
@@ -33,10 +34,10 @@
 		            }, 100);
 		        }		        
 		        else
-		        {
+		        {		        	
 		        	dbx.auth.accessToken = localStorage.getItem('dropboxAccessToken');
 		        	window.addEventListener("message", onMessage,false);
-		        	doAction(checkUser);		        						
+		        	doAction(checkUser);		        	
 		        }				
 			}
 
@@ -91,6 +92,8 @@
 		    	else if(sentFalse) { authenticate(action,prms); }
 		    	else if(dbx.auth.accessToken)
 		    	{
+		    		action(prms);
+		    		/*
 		    		dbx.checkUser({"query": ""})
 			    	.then(function(e) {			    		
 				        action(prms);
@@ -99,6 +102,7 @@
 				    {
 						handleError(e);
 				    });
+				    */
 		    	}
 		    	else { handleError("No Access Token present."); }
 		    }

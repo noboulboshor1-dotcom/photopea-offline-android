@@ -181,6 +181,7 @@
 
 			if(path.length == 0 || path[0] == '')
 			{
+
 				if(action == listDir)
 				{
 					var query = "'" + id + "' in parents";
@@ -213,8 +214,8 @@
 				'q': query,
 				'pageToken' : pageToken,
 				'pageSize': 1000,
-				'fields': "nextPageToken, files(id, name, size, modifiedTime, kind, mimeType, trashed)",};
-				if(mode == 1) 
+				'fields': "nextPageToken, files(id, name, size, modifiedTime, kind, mimeType, trashed, shortcutDetails)",};
+				if(mode == 1 || query != "'root' in parents") 
 				{
 					req['supportsAllDrives'] = true;
 					req['includeItemsFromAllDrives'] = true;
@@ -223,7 +224,7 @@
 				{
 					req['spaces'] = "appDataFolder";
 				}
-				else if(mode == 4 && req["q"] == "'sharedWithMe' in parents")
+				if(mode == 4 && req["q"] == "'sharedWithMe' in parents")
 				{
 					req['q'] = "sharedWithMe";
 				}
@@ -239,6 +240,7 @@
 						{
 							found = true;
 							if(newFile && action == renameFile) { renameFile(files[i].id, newFile); return; }
+							else if(files[i].shortcutDetails) { findFile(action, path.slice(1), files[i].shortcutDetails.targetId, null, buffer); return; }
 							else { findFile(action, path.slice(1), files[i].id, null, buffer); return; }
 						}
 					}
@@ -276,8 +278,8 @@
 					'q': query,
 					'pageToken' : pageToken,
 					'pageSize': 1000,	                	
-					'fields': "nextPageToken, files(id, name, size, modifiedTime, kind, mimeType, thumbnailLink, trashed)",};
-					if(mode == 1) 
+					'fields': "nextPageToken, files(id, name, size, modifiedTime, kind, mimeType, thumbnailLink, trashed, shortcutDetails)",};
+					if(mode == 1 || query != "'root' in parents")
 					{
 						req['supportsAllDrives'] = true;
 						req['includeItemsFromAllDrives'] = true;
@@ -286,9 +288,9 @@
 					{
 						req['spaces'] = "appDataFolder";
 					}
-					else if(mode == 4 && req["q"] == "'sharedWithMe' in parents")
+					if(mode == 4 && req['q'] == "'sharedWithMe' in parents")
 					{
-						req["q"] = "sharedWithMe";
+						req['q'] = "sharedWithMe";
 					}
 					gapi.client.drive.files.list(req)
 					.then(function(response) {		      			
@@ -298,10 +300,23 @@
 						{
 							if(files[i].trashed) continue;
 							else if(files[i].mimeType == "application/vnd.google-apps.folder") { out.push([files[i].name, -1, Math.round(Date.parse(files[i].modifiedTime)/1000)]); }
-							else if(files[i].mimeType.includes("application/vnd.google-apps.")) { }
+							else if(files[i].mimeType == "application/vnd.google-apps.shortcut") 
+							{
+								//console.log(files[i]);
+								if(files[i].shortcutDetails.targetMimeType == "application/vnd.google-apps.folder")
+									{ out.push([files[i].name, -1, Math.round(Date.parse(files[i].modifiedTime)/1000)]); }
+								else if(files[i].shortcutDetails.targetMimeType == "application/vnd.google-apps") {} 
 								else
 								{
-									if(files[i].thumbnailLink) { out.push([files[i].name,files[i].size ? parseInt(files[i].size) : 0, Math.round(Date.parse(files[i].modifiedTime)/1000), files[i].thumbnailLink]); }
+									if(files[i].thumbnailLink) { out.push([files[i].name, 0, Math.round(Date.parse(files[i].modifiedTime)/1000), files[i].thumbnailLink]); }
+			      					//but maybe we should only show thumbnail to files which Photopea can open - Gdrive also makes thumbnails for spreadsheets etc.
+			      					else { out.push([files[i].name,0, Math.round(Date.parse(files[i].modifiedTime)/1000)]); }
+			      				}
+							}								
+							else if(files[i].mimeType.includes("application/vnd.google-apps.")) { }
+							else
+							{
+								if(files[i].thumbnailLink) { out.push([files[i].name,files[i].size ? parseInt(files[i].size) : 0, Math.round(Date.parse(files[i].modifiedTime)/1000), files[i].thumbnailLink]); }
 		      					//but maybe we should only show thumbnail to files which Photopea can open - Gdrive also makes thumbnails for spreadsheets etc.
 		      					else { out.push([files[i].name,parseInt(files[i].size), Math.round(Date.parse(files[i].modifiedTime)/1000)]); }
 		      				}
@@ -315,8 +330,9 @@
 				function downloadFile(fileId)
 				{
 					var xhr = new XMLHttpRequest();
-					var shared = "";
-					if(mode == 1) shared = "&supportsAllDrives=true";
+					//var shared = "";
+					//if(mode == 1) shared = "&supportsAllDrives=true";
+					var shared = "&supportsAllDrives=true";
 					xhr.open('GET', "https://www.googleapis.com/drive/v3/files/" + fileId + "?alt=media" + shared);
 					xhr.responseType = "arraybuffer";
 					xhr.setRequestHeader('Authorization', 'Bearer ' + gapi.client.getToken().access_token);
@@ -328,8 +344,9 @@
 				function downloadThumbnail(fileId)
 				{
 					var xhr = new XMLHttpRequest();
-					var shared = "";
-					if(mode == 1) shared = "&supportsAllDrives=true";
+					//var shared = "";
+					//if(mode == 1) shared = "&supportsAllDrives=true";
+					var shared = "&supportsAllDrives=true";
 					xhr.open('GET', "https://www.googleapis.com/drive/v3/files/" + fileId + "?fields=thumbnailLink" + shared);
 					xhr.setRequestHeader('Authorization', 'Bearer ' + gapi.client.getToken().access_token);
 					xhr.onload = function(e)
@@ -422,7 +439,8 @@
 							'name' : newName,
 						}
 					};
-					if(mode == 1) req['supportsAllDrives'] = true;
+					//if(mode == 1) req['supportsAllDrives'] = true;
+					req['supportsAllDrives'] = true;
 					gapi.client.drive.files.update(req)
 					.then(function(response) {
 						send(0,"");	            			            	
@@ -442,7 +460,7 @@
       				'q': query,
       				'pageToken' : pageToken,
       				'pageSize': 1000,	                
-      				'fields': "nextPageToken, files(id, name, trashed)",};
+      				'fields': "nextPageToken, files(id, name, trashed, mimeType, shortcutDetails)",};
       				if(mode == 1)
       				{
       					req['supportsAllDrives'] = true;
@@ -463,10 +481,15 @@
       						if(files[i].name == name)
       						{
       							found = true;
-      							if(buffer) { uploadFile(files[i].id,parentId,name,buffer); }
+      							var fid = files[i].id;
+      							if(files[i].mimeType == "application/vnd.google-apps.shortcut")
+      							{
+      								fid = files[i].shortcutDetails.targetId;
+      							}
+      							if(buffer) { uploadFile(fid,parentId,name,buffer); }
       							else
       							{
-      								query = "'" + files[i].id + "' in parents";
+      								query = "'" + fid + "' in parents";
 									listDir(null, query, []);
       							} 
       							return;
@@ -491,8 +514,9 @@
       					metadata['mimeType'] = contentType;
       					metadata['Content-Type'] = contentType;
       					metadata['Content-Length'] = file.size;
-      					var shared = "";
-      					if(mode == 1) shared = "&supportsAllDrives=true";
+      					//var shared = "";
+      					//if(mode == 1) shared = "&supportsAllDrives=true";
+      					var shared = "&supportsAllDrives=true";
       					if(!fileId)	xhr.open("POST", "https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable" + shared);
       					else xhr.open("PATCH", "https://www.googleapis.com/upload/drive/v3/files/" + fileId + "?uploadType=resumable" + shared);
       					xhr.setRequestHeader('Authorization', 'Bearer ' + gapi.client.getToken().access_token);
@@ -529,8 +553,9 @@
       					var form = new FormData();
       					form.append('metadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
       					form.append('file', file);
-      					var shared = "";
-      					if(mode == 1) shared = "&supportsAllDrives=true";
+      					//var shared = "";
+      					//if(mode == 1) shared = "&supportsAllDrives=true";
+      					var shared = "&supportsAllDrives=true";
       					if(!fileId) xhr.open('POST', 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id' + shared);
       					else xhr.open('PATCH', 'https://www.googleapis.com/upload/drive/v3/files/' + fileId + '?uploadType=multipart&fields=id' + shared);	
       					xhr.setRequestHeader('Authorization', 'Bearer ' + gapi.client.getToken().access_token);
